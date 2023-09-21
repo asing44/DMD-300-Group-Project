@@ -1,0 +1,14 @@
+:root {
+    --white: rgba(242, 244, 247, 1);
+    --main: rgba(39, 70, 144, 1);
+    --mainLight: rgba(87, 108, 168, 1);
+    --greenAccent: rgba(32, 252, 143, 1);
+    --redAccent: rgba(219, 80, 74, 1);
+    --dark: rgba(19, 2, 9, 1);
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--mainLightÒ);
+}
