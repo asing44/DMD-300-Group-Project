@@ -1,3 +1,21 @@
+// -------------------- INIT -------------------- //
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.config({
+    autoSleep: 60,
+});
+
+ScrollTrigger.normalizeScroll(true);
+
+var viewportHeight = window.innerHeight;
+var viewportWidth = window.innerWidth;
+console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
+
+window.addEventListener("resize", () => {
+    viewportHeight = window.innerHeight;
+    viewportWidth = window.innerWidth;
+})
 
 // -------------------- HERO -------------------- //
 
@@ -22,3 +40,21 @@ gsap.to(heroArrow, {
     }],
     repeat: -1,
 })
+
+// -------------------- SECTION CHANGES -------------------- //
+
+const sectionChanges = gsap.utils.toArray(".section-change-wrapper");
+
+sectionChanges.forEach((item) => {
+    let sectionWrapper = item.parentElement;
+    let tl = gsap.timeline({
+    });
+    tl.to(item, {
+        x: -500,
+        scrollTrigger: {
+            trigger: sectionWrapper,
+            scrub: 1,
+            ease: "power2.inOut"
+        }
+    })
+});

@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400|Barlow+Condensed:800');
 
 :root {
+    --headingFont: 'Barlow Condensed', sans-serif;
+    --bodyFont: 'Montserrat', sans-serif;
+    
     --white: rgba(242, 244, 247, 1);
     --main: rgba(39, 70, 144, 1);
     --mainLight: rgba(87, 108, 168, 1);
@@ -102,9 +105,10 @@ small, .text_small {font-size: 0.707rem;}
 }
 
 .section-change {
+    display: flex;
     position: relative;
-    min-height: 50vh;
     width: 100%;
+    align-items: center;
 }
 
 /* --------------------
@@ -114,10 +118,12 @@ small, .text_small {font-size: 0.707rem;}
 .section-change-wrapper {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    font-size: 5.653rem;
+    color: transparent;
+    font-family: var(--headingFont);
+    font-size: 7rem;
     font-weight: 800;
+    white-space: nowrap;
+    -webkit-text-stroke: 0.253rem var(--main);
 }
 
 /* --------------------
@@ -172,3 +178,12 @@ small, .text_small {font-size: 0.707rem;}
     z-index: 1;
 }
 
+/* --------------------
+    INTRODUCTION
+-------------------- */
+
+.introduciton {
+    display: grid;
+    height: 85vh;
+    width: 100%;
+}
