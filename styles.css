@@ -6,7 +6,7 @@
     --mainLight: rgba(87, 108, 168, 1);
     --greenAccent: rgba(32, 252, 143, 1);
     --redAccent: rgba(219, 80, 74, 1);
-    --dark: rgba(19, 2, 9, 1);
+    --dark: rgba(19, 2, 9); /* #130209 */
 }
 
 /* --------------------
@@ -91,6 +91,15 @@ small, .text_small {font-size: 0.707rem;}
     left: 0;
     background-image: url(./SVG/gggrain.svg);
     background-size: cover;
+    z-index: 1;
+}
+
+/* --------------------
+    TEMPLATES
+-------------------- */
+
+.wrapper {
+
 }
 
 /* --------------------
@@ -101,44 +110,45 @@ small, .text_small {font-size: 0.707rem;}
     display: flex;
     height: 100vh;
     width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    background-color: var(--white);
+}
+
+.hero-h1-wrapper {
+    position: relative;
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.353);
+    border-radius: 1rem;
+    padding: 1.414rem 2.837rem;
+    z-index: 1;
 }
 
 .hero-h1 {
+    width: -moz-min-content;
+    width: min-content;
+    background: linear-gradient(219deg, 
+    var(--redAccent) 19%, 
+    transparent 19%,transparent 20%, 
+    var(--mainLight) 20%, var(--mainLight)  39%,
+    transparent 39%,transparent 40%, 
+    var(--main) 40%,var(--main) 59% ,
+    transparent 59%,transparent 60%, 
+    var(--mainLight) 60%, var(--mainLight) 79%,
+    transparent 79%, transparent 80%, 
+    var(--redAccent) 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-variant: small-caps;
+}
+
+.hero-arrow {
     display: flex;
-    height: min-content;
-    width: 100%;
     flex-direction: column;
-}
-
-.hero-h1 div {
-    position: relative;
-    display: flex;
-    height: 100%;
-    flex: 1 1 100%;
-    flex-wrap: nowrap;
-}
-
-.h1-line-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex: 1;
-}
-
-.h1-line-container:first-of-type {
-    padding-left: 1.414rem;
-}
-
-.h1-line-container:last-of-type {
-    padding-right: 1.414rem;
-}
-
-.h1-line {
-    position: flex;
-    height: 0.5rem;
-    width: 100%;
-    border-radius: 1rem;
-    background-color: var(--mainLight);
+    font-size: 5rem;
+    color: var(--white);
+    z-index: 1;
 }
