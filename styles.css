@@ -84,14 +84,13 @@ small, .text_small {font-size: 0.707rem;}
 -------------------- */
 
 #grainy-gradient {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100%;
     top: 0;
     left: 0;
     background-image: url(./SVG/gggrain.svg);
     background-size: cover;
-    z-index: 1;
 }
 
 /* --------------------
@@ -99,7 +98,26 @@ small, .text_small {font-size: 0.707rem;}
 -------------------- */
 
 .wrapper {
+    min-height: min-content;
+}
 
+.section-change {
+    position: relative;
+    min-height: 50vh;
+    width: 100%;
+}
+
+/* --------------------
+    PAGE CHANGES
+-------------------- */
+
+.section-change-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 5.653rem;
+    font-weight: 800;
 }
 
 /* --------------------
@@ -153,3 +171,4 @@ small, .text_small {font-size: 0.707rem;}
     -webkit-text-stroke: 1.414px var(--white);
     z-index: 1;
 }
+
