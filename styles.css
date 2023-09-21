@@ -20,7 +20,7 @@
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1920px) {f
     :root {
       font-size: 24px;
     }
@@ -42,11 +42,11 @@ body {
     min-height: 100vh;
     width: 100%;
     margin: 0;
-    padding: 0;
-    background-color: var(--white);
+    padding: 0 1.414rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     line-height: 1.75;
+    overflow-x: hidden;
 }
 
 /* --------------------
@@ -78,3 +78,67 @@ h4 {font-size: 1.999rem;}
 h5 {font-size: 1.414rem;}
 
 small, .text_small {font-size: 0.707rem;}
+
+/* --------------------
+    STICKY
+-------------------- */
+
+#grainy-gradient {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(./SVG/gggrain.svg);
+    background-size: cover;
+}
+
+/* --------------------
+    HERO
+-------------------- */
+
+.hero {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-h1 {
+    display: flex;
+    height: min-content;
+    width: 100%;
+    flex-direction: column;
+}
+
+.hero-h1 div {
+    position: relative;
+    display: flex;
+    height: 100%;
+    flex: 1 1 100%;
+    flex-wrap: nowrap;
+}
+
+.h1-line-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.h1-line-container:first-of-type {
+    padding-left: 1.414rem;
+}
+
+.h1-line-container:last-of-type {
+    padding-right: 1.414rem;
+}
+
+.h1-line {
+    position: flex;
+    height: 0.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: var(--mainLight);
+}
