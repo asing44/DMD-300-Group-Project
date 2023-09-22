@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Barlow+Condensed:800');
-
 :root {
-    --headingFont: 'Barlow Condensed', sans-serif;
+    --headingFont: 'Fira Sans', sans-serif;
     --bodyFont: 'Montserrat', sans-serif;
     
     --white: rgba(242, 244, 247, 1);
@@ -9,9 +7,9 @@
     --mainLight: rgba(87, 108, 168, 1);
     --greenAccent: rgba(32, 252, 143, 1);
     --redAccent: rgba(219, 80, 74, 1);
-    --dark-2: rgba(19, 2, 9, 0.25);
-    --dark-1: rgba(19, 2, 9, 0.50);
-    --dark: rgba(19, 2, 9, 1); /* #130209 */
+    --dark-2: rgba(49, 54, 40, 0.25);
+    --dark-1: rgba(49, 54, 40, 0.50);
+    --dark: rgba(49, 54, 40, 1); /* #130209 */
  
     --scale-6: 2px;
     --scale-5: 0.253rem;
@@ -62,7 +60,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0 var(--scale2);
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--bodyFont);
     font-weight: 400;
     font-kerning: auto;
     line-height: 1.75;
@@ -77,7 +75,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   margin: 3rem 0 1.38rem;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: var(--headingFont);
   font-weight: 800;
   line-height: 1.3;
 }
@@ -110,7 +108,7 @@ small, .text_small {font-size: 0.707rem;}
     width: 100%;
     top: 0;
     left: 0;
-    background-image: url(./SVG/gggrain.svg);
+    background-image: url(./SVG/gggrain\(1\).svg);
     background-size: cover;
 }
 
@@ -239,8 +237,10 @@ small, .text_small {font-size: 0.707rem;}
 }
 
 .topic-pagination {
-    display: inline-flex;
-    padding: 0 var(--scale-1);
+    display: grid;
+    height: var(--scale2);
+    width: var(--scale2);
+    place-content: center;
     border: var(--scale-5) solid var(--dark);
     border-radius: 50%;
     font-size: var(--scale0);
@@ -277,7 +277,7 @@ small, .text_small {font-size: 0.707rem;}
     align-items: center;
     margin: 0;
     font-size: var(--scale0);
-    font-weight: 400; /* Need to get more font types! */
+    font-weight: 400; /* TODO change font weights! */
 }
 
 .team-name {
