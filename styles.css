@@ -9,7 +9,23 @@
     --mainLight: rgba(87, 108, 168, 1);
     --greenAccent: rgba(32, 252, 143, 1);
     --redAccent: rgba(219, 80, 74, 1);
-    --dark: rgba(19, 2, 9); /* #130209 */
+    --dark-2: rgba(19, 2, 9, 0.25);
+    --dark-1: rgba(19, 2, 9, 0.50);
+    --dark: rgba(19, 2, 9, 1); /* #130209 */
+ 
+    --scale-6: 2px;
+    --scale-5: 0.253rem;
+    --scale-4: 0.353rem;
+    --scale-3: 0.500rem;
+    --scale-2: 0.707rem;
+    --scale-1: 1.000rem;
+    --scale0: 1.414rem;
+    --scale1: 2.000rem;
+    --scale2: 2.827rem;
+    --scale3: 4.000rem;
+    --scale4: 5.652rem;
+    --scale5: 7.992rem;
+
 }
 
 /* --------------------
@@ -45,7 +61,7 @@ body {
     min-height: 100vh;
     width: 100%;
     margin: 0;
-    padding: 0 1.414rem;
+    padding: 0 var(--scale2);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     line-height: 1.75;
@@ -53,7 +69,7 @@ body {
 }
 
 /* --------------------
-    GLOBAL
+    GLOBAL ELEMENTS
 -------------------- */
 
 
@@ -97,7 +113,7 @@ small, .text_small {font-size: 0.707rem;}
 }
 
 /* --------------------
-    TEMPLATES
+    GLOBAL TEMPLATES
 -------------------- */
 
 .wrapper {
@@ -110,14 +126,16 @@ small, .text_small {font-size: 0.707rem;}
     position: relative;
     width: 100%;
     align-items: center;
-    margin: 10rem 0;
+    margin: var(--scale5) 0;
 }
 
-.main-topic {
-    position: relative;
-    display: grid;
-    min-height: 85vh;
-    width: 100%;
+.inline-dot {
+    display: inline-block;
+    height: var(--scale-4);
+    width: var(--scale-4);
+    margin-right: var(--scale-5);
+    border-radius: 50%;
+    background-color: var(--dark);
 }
 
 /* --------------------
@@ -201,10 +219,73 @@ small, .text_small {font-size: 0.707rem;}
 }
 
 /* --------------------
+    TOPIC SECTION TEMPLATES
+-------------------- */
+
+.main-topic {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.topic-container {
+    position: relative;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.section-divider {
+    height: var(--scale-6);
+    margin-bottom: var(--scale0);
+    border-radius: 1rem;
+    background-color: var(--dark-2);
+}
+
+.TT-wrapper {
+    display: relative;
+    height: 100%;
+}
+
+.TT-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TT-heading {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: var(--scale1);
+    font-weight: 400; /*  */
+}
+
+.team-name {
+    margin: 0;
+    color: var(--dark-1);
+}
+
+/* --------------------
     COLOR CONTRAST
 -------------------- */
 
-.color-contrast {
-    display: grid;
-    
+.color-contrast-container {
+    grid-template-rows: 10% 1fr 1fr;
+}
+
+.CC {
+    height: 100%;
+}
+
+.CC-top {
+    grid-area: 1 / 1;
+}
+
+.CC-middle {
+    grid-area: 2 / 1;
+}
+
+.CC-bottom {
+    grid-area: 3 / 1;
 }
