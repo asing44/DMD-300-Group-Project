@@ -64,7 +64,9 @@ body {
     padding: 0 var(--scale2);
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    font-kerning: auto;
     line-height: 1.75;
+    kerning: auto;
     overflow-x: hidden;
 }
 
@@ -126,7 +128,7 @@ small, .text_small {font-size: 0.707rem;}
     position: relative;
     width: 100%;
     align-items: center;
-    margin: var(--scale5) 0;
+    margin: var(--scale4) 0;
 }
 
 .inline-dot {
@@ -222,9 +224,10 @@ small, .text_small {font-size: 0.707rem;}
     TOPIC SECTION TEMPLATES
 -------------------- */
 
-.main-topic {
+.topic {
     position: relative;
     height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -233,6 +236,22 @@ small, .text_small {font-size: 0.707rem;}
     display: grid;
     height: 100%;
     width: 100%;
+}
+
+.topic-pagination {
+    display: inline-flex;
+    padding: 0 var(--scale-1);
+    border: var(--scale-5) solid var(--dark);
+    border-radius: 50%;
+    font-size: var(--scale0);
+    font-weight: bold;
+}
+
+/* TOPIC TOP */
+
+.TT {
+    position: relative;
+    height: 100%;
 }
 
 .section-divider {
@@ -257,13 +276,32 @@ small, .text_small {font-size: 0.707rem;}
     display: flex;
     align-items: center;
     margin: 0;
-    font-size: var(--scale1);
-    font-weight: 400; /*  */
+    font-size: var(--scale0);
+    font-weight: 400; /* Need to get more font types! */
 }
 
 .team-name {
     margin: 0;
     color: var(--dark-1);
+}
+
+/* TOPIC MIDDLE */
+.TM {
+    margin-top: var(--scale3);
+}
+
+.TM-right {
+    width: 75%;
+}
+
+.TM-left {
+    position: relative;
+    height: 100%;
+    width: 25%;
+}
+
+.TM-pagination-wrapper {
+    height: 100%;
 }
 
 /* --------------------
@@ -283,6 +321,8 @@ small, .text_small {font-size: 0.707rem;}
 }
 
 .CC-middle {
+    display: flex;
+    flex-direction: row-reverse;
     grid-area: 2 / 1;
 }
 
