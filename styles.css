@@ -287,11 +287,19 @@ small, .text_small {font-size: 0.707rem;}
 
 /* TOPIC MIDDLE */
 .TM {
-    margin-top: var(--scale3);
+    position: relative;
+    padding-top: var(--scale4);
 }
 
 .TM-right {
     width: 75%;
+}
+
+.TM-h3 {
+    max-width: 40rem;
+    font-family: var(--bodyFont);
+    font-size: var(--scale3);
+    margin: 0;
 }
 
 .TM-left {
@@ -301,7 +309,9 @@ small, .text_small {font-size: 0.707rem;}
 }
 
 .TM-pagination-wrapper {
+    position: relative;
     height: 100%;
+    top: var(--scale0);
 }
 
 /* --------------------
