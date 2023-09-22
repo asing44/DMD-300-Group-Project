@@ -4,6 +4,7 @@
     
     --white: rgba(242, 244, 247, 1);
     --main: rgba(39, 70, 144, 1);
+    --mainLight-1: rgba(87, 108, 168, 0.5);
     --mainLight: rgba(87, 108, 168, 1);
     --greenAccent: rgba(32, 252, 143, 1);
     --redAccent: rgba(219, 80, 74, 1);
@@ -11,7 +12,8 @@
     --dark-1: rgba(49, 54, 40, 0.50);
     --dark: rgba(49, 54, 40, 1); /* #130209 */
  
-    --scale-6: 2px;
+    --scale-7: 1.414px;
+    --scale-6: 2.000px;
     --scale-5: 0.253rem;
     --scale-4: 0.353rem;
     --scale-3: 0.500rem;
@@ -98,6 +100,12 @@ h5 {font-size: 1.414rem;}
 
 small, .text_small {font-size: 0.707rem;}
 
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 /* --------------------
     STICKY
 -------------------- */
@@ -110,6 +118,27 @@ small, .text_small {font-size: 0.707rem;}
     left: 0;
     background-image: url(./SVG/gggrain\(1\).svg);
     background-size: cover;
+}
+
+.back-to-top-wrapper {
+    position: fixed;
+    display: grid;
+    height: var(--scale3);
+    width: var(--scale3);
+    right: var(--scale2);
+    bottom: var(--scale2);
+    border: 0.1rem solid red;
+    place-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.back-to-top {
+    height: min-content;
+    width: min-content;
+    font-size: var(--scale0);
+    cursor: pointer;
 }
 
 /* --------------------
@@ -135,7 +164,7 @@ small, .text_small {font-size: 0.707rem;}
     width: var(--scale-4);
     margin-right: var(--scale-5);
     border-radius: 50%;
-    background-color: var(--dark);
+    background-color: var(--mainLight);
 }
 
 /* --------------------
@@ -169,8 +198,8 @@ small, .text_small {font-size: 0.707rem;}
 
 .hero-h1-wrapper {
     position: relative;
-    backdrop-filter: blur(4.5px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(var(--scale-1));
+    -webkit-backdrop-filter: blur(var(--scale-1));
     border: 1.414px solid rgba(255, 255, 255, 0.353);
     border-radius: 1rem;
     padding: 1.414rem 2.837rem;
@@ -241,10 +270,10 @@ small, .text_small {font-size: 0.707rem;}
     height: var(--scale2);
     width: var(--scale2);
     place-content: center;
-    border: var(--scale-5) solid var(--dark);
+    border: var(--scale-6) solid var(--dark);
     border-radius: 50%;
+    font-family: var(--headingFont);
     font-size: var(--scale0);
-    font-weight: bold;
 }
 
 /* TOPIC TOP */
@@ -276,8 +305,14 @@ small, .text_small {font-size: 0.707rem;}
     display: flex;
     align-items: center;
     margin: 0;
+    padding: var(--scale-5) var(--scale-2);
+    border: var(--scale-7) solid var(--white);
+    border-radius: var(--scale-2);
+    color: var(--mainLight);
     font-size: var(--scale0);
-    font-weight: 400; /* TODO change font weights! */
+    font-weight: 500; /* TODO change font weights! */
+    backdrop-filter: blur(var(--scale-1));
+    -webkit-backdrop-filter: blur(var(--scale-1));
 }
 
 .team-name {
