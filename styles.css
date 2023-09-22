@@ -101,6 +101,7 @@ small, .text_small {font-size: 0.707rem;}
 -------------------- */
 
 .wrapper {
+    position: relative;
     min-height: min-content;
 }
 
@@ -109,6 +110,14 @@ small, .text_small {font-size: 0.707rem;}
     position: relative;
     width: 100%;
     align-items: center;
+    margin: 10rem 0;
+}
+
+.main-topic {
+    position: relative;
+    display: grid;
+    min-height: 85vh;
+    width: 100%;
 }
 
 /* --------------------
@@ -183,7 +192,19 @@ small, .text_small {font-size: 0.707rem;}
 -------------------- */
 
 .introduciton {
+    position: relative;
     display: grid;
     height: 85vh;
     width: 100%;
+    border: 5px solid var(--dark);
+    z-index: 1;
+}
+
+/* --------------------
+    COLOR CONTRAST
+-------------------- */
+
+.color-contrast {
+    display: grid;
+    
 }
