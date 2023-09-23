@@ -108,6 +108,10 @@ button {
     border: none;
 }
 
+blockquote {
+    margin: 0;
+}
+
 /* --------------------
     STICKY
 -------------------- */
@@ -266,8 +270,7 @@ button {
 
 .topic {
     position: relative;
-    height: 100vh;
-    min-height: 100vh;
+    height: clamp(100vh, auto, 150vh);
     width: 100%;
 }
 
@@ -276,6 +279,7 @@ button {
     display: grid;
     height: 100%;
     width: 100%;
+    padding: var(--scale2) 0;
 }
 
 .topic-pagination {
@@ -287,10 +291,6 @@ button {
     border-radius: 50%;
     font-family: var(--headingFont);
     font-size: var(--scale0);
-}
-
-.CC-wrap {
-    position: relative;
 }
 
 /* TOPIC TOP */
@@ -307,7 +307,7 @@ button {
     background-color: var(--dark-2);
 }
 
-.TT-wrap {
+.topic-wrap {
     display: relative;
     height: 100%;
     overflow: clip;
@@ -340,9 +340,10 @@ button {
 }
 
 /* TOPIC MIDDLE */
+
 .TM {
     position: relative;
-    padding-top: var(--scale4);
+    padding: var(--scale3) 0;
 }
 
 .TM-right {
@@ -370,8 +371,12 @@ button {
 
 /* TOPIC BOTTOM */
 
-.TT-bottom {
+.TB-bottom {
     display: flex;
+}
+
+.TB-bottom-left {
+    max-width: 20%;
 }
 
 /* --------------------

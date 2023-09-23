@@ -44,14 +44,14 @@ gsap.to(heroArrow, {
 
 // -------------------- COLOR CONTRAST -------------------- //
 
-let content = gsap.utils.toArray(".CC-wrap");
+let content = gsap.utils.toArray(".topic-wrap");
 
 content.forEach((item, index) => {
     let tl = gsap.timeline({
         delay: 1,
-        stagger: 0.2,
+        stagger: 0.1,
         defaults: {
-            duration: 2,
+            duration: 1.5,
             ease: "power3.out"
         },
         scrollTrigger: {
@@ -73,16 +73,33 @@ const sectionChanges = gsap.utils.toArray(".section-change-wrapper");
 
 sectionChanges.forEach((item) => {
     let sectionWrapper = item.parentElement;
-    let tl = gsap.timeline({
-    });
-    tl.to(item, {
-        x: -500,
-        scrollTrigger: {
-            trigger: sectionWrapper,
-            scrub: 1,
-            ease: "power2.inOut"
-        }
-    })
+    
+    if (item.classList.contains("reverse")) {
+        let tl = gsap.timeline({
+        });
+        gsap.set(item, {
+            xPercent: -50
+        });
+        tl.to(item, {
+            x: 500,
+            scrollTrigger: {
+                trigger: sectionWrapper,
+                scrub: 1,
+                ease: "power2.inOut"
+            }
+        })
+    } else {
+        let tl = gsap.timeline({
+        });
+        tl.to(item, {
+            x: -500,
+            scrollTrigger: {
+                trigger: sectionWrapper,
+                scrub: 1,
+                ease: "power2.inOut"
+            }
+        })
+    }
 });
 
 // -------------------- BACK TO TOP -------------------- //
