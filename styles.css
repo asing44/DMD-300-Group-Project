@@ -2,6 +2,8 @@
     --headingFont: 'Fira Sans', sans-serif;
     --bodyFont: 'Montserrat', sans-serif;
     
+    --white-2: rgba(242, 244, 247, 0.25);
+    --white-1: rgba(242, 244, 247, 0.5);
     --white: rgba(242, 244, 247, 1);
     --main: rgba(39, 70, 144, 1);
     --mainLight-1: rgba(87, 108, 168, 0.5);
@@ -127,9 +129,10 @@ button {
     width: var(--scale3);
     right: var(--scale2);
     bottom: var(--scale2);
-    border: 0.1rem solid red;
+    border: var(--scale-6) solid var(--white-2);
     place-content: center;
-    border-radius: 50%;
+    border-radius: var(--scale0);
+    opacity: 0%;
     cursor: pointer;
     z-index: 5;
 }
@@ -137,7 +140,9 @@ button {
 .back-to-top {
     height: min-content;
     width: min-content;
-    font-size: var(--scale0);
+    background-color: transparent;
+    color: var(--white-2);
+    font-size: var(--scale1);
     cursor: pointer;
 }
 
@@ -165,6 +170,14 @@ button {
     margin-right: var(--scale-5);
     border-radius: 50%;
     background-color: var(--mainLight);
+}
+
+.underline {
+
+}
+
+.text-highlight {
+
 }
 
 /* --------------------
@@ -276,6 +289,10 @@ button {
     font-size: var(--scale0);
 }
 
+.CC-wrap {
+    position: relative;
+}
+
 /* TOPIC TOP */
 
 .TT {
@@ -290,9 +307,10 @@ button {
     background-color: var(--dark-2);
 }
 
-.TT-wrapper {
+.TT-wrap {
     display: relative;
     height: 100%;
+    overflow: clip;
 }
 
 .TT-header {
@@ -313,6 +331,7 @@ button {
     font-weight: 500; /* TODO change font weights! */
     backdrop-filter: blur(var(--scale-1));
     -webkit-backdrop-filter: blur(var(--scale-1));
+    overflow: clip;
 }
 
 .team-name {
@@ -328,6 +347,7 @@ button {
 
 .TM-right {
     width: 75%;
+    overflow: clip;
 }
 
 .TM-h3 {
@@ -346,6 +366,12 @@ button {
     position: relative;
     height: 100%;
     top: var(--scale0);
+}
+
+/* TOPIC BOTTOM */
+
+.TT-bottom {
+    display: flex;
 }
 
 /* --------------------
@@ -368,6 +394,13 @@ button {
     display: flex;
     flex-direction: row-reverse;
     grid-area: 2 / 1;
+}
+
+.CC-h3 {
+    background: rgb(87,108,168);
+    background: linear-gradient(80deg, rgba(87,108,168,1) 25%, rgba(39,70,144,1) 100%); 
+    background-clip: text;
+    color: transparent;
 }
 
 .CC-bottom {
