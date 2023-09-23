@@ -373,10 +373,12 @@ blockquote {
 
 .TB-bottom {
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .TB-bottom-left {
-    max-width: 20%;
+    max-width: 35%;
+    font-size: var(--scale-2);
 }
 
 /* --------------------
