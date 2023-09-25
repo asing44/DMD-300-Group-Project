@@ -122,7 +122,7 @@ blockquote {
     width: 100%;
     top: 0;
     left: 0;
-    background-image: url(./SVG/gggrain\(1\).svg);
+    background: url(./SVG/gggrain\(1\).svg) repeat;
     background-size: cover;
 }
 
@@ -287,10 +287,13 @@ blockquote {
     height: var(--scale2);
     width: var(--scale2);
     place-content: center;
-    border: var(--scale-6) solid var(--dark);
+    border: var(--scale-7) solid var(--white-1);
     border-radius: 50%;
     font-family: var(--headingFont);
     font-size: var(--scale0);
+    color: var(--mainLight-1);
+    backdrop-filter: blur(var(--scale-1));
+    -webkit-backdrop-filter: blur(var(--scale-1));
 }
 
 /* TOPIC TOP */
@@ -326,7 +329,7 @@ blockquote {
     padding: var(--scale-5) var(--scale-2);
     border: var(--scale-7) solid var(--white);
     border-radius: var(--scale-2);
-    color: var(--mainLight);
+    color: var(--mainLight-1);
     font-size: var(--scale0);
     font-weight: 500; /* TODO change font weights! */
     backdrop-filter: blur(var(--scale-1));
@@ -374,6 +377,7 @@ blockquote {
 .TB-bottom {
     display: flex;
     flex-direction: row-reverse;
+    column-gap: var(--scale2);
 }
 
 .TB-right {
@@ -381,7 +385,7 @@ blockquote {
 }
 
 .TB-left {
-    flex: 1 1 35%;
+    width: 25%;
     font-size: var(--scale-2);
 }
 
@@ -390,9 +394,12 @@ blockquote {
 }
 
 .TB-quote {
-    padding: var(--scale-4) var(--scale0);
-    border: 2px solid green;
+    padding: var(--scale-1) var(--scale1);
+    border: var(--scale-7) solid var(--white-1);
+    border-radius: 1rem;
     font-size: var(--scale-1);
+    backdrop-filter: blur(var(--scale-1));
+    -webkit-backdrop-filter: blur(var(--scale-1));
 }
 
 /* --------------------
