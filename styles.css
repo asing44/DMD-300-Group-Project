@@ -411,9 +411,53 @@ blockquote {
     margin-top: 0;
 }
 
-.TBR-button {
-    background-color: transparent;
+.example-button-wrap {
+    position: relative;
+    height: min-content;
+    width: min-content;
+    overflow: hidden;
+}
 
+.TBR-button, .example-button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: var(--scale-1) var(--scale1);
+    border-radius: 1rem;
+    background-color: var(--main);
+    font-family: var(--headingFont);
+    font-size: var(--scale-2);
+    font-variant-caps: titling-caps;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: clip;
+    z-index: 1;
+}
+
+.example-button-text {
+    position: relative;
+    display: inline-block;
+    color: var(--white);
+    overflow: clip;
+    z-index: 2;
+}
+
+.example-button-text-hover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: var(--main)
+}
+
+.example-button-hover {
+    position: absolute;
+    height: 100%;
+    width: 101%;
+    top: 0;
+    left: -101%;
+    padding: inherit;
+    background-color: var(--white);
+    z-index: -1;
 }
 
 .TBR-left {

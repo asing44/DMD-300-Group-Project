@@ -42,7 +42,7 @@ gsap.to(heroArrow, {
     repeat: -1,
 })
 
-// -------------------- COLOR CONTRAST -------------------- //
+// -------------------- TOPIC SECTIONS -------------------- //
 
 let content = gsap.utils.toArray(".topic-wrap");
 
@@ -65,6 +65,34 @@ content.forEach((item, index) => {
     tl.to(item, {
         y: 0,
     })
+});
+
+let sectionButtons = gsap.utils.toArray(".example-button");
+
+sectionButtons.forEach((item, index) => {
+    let buttonTextHover = item.children[0].children[0];
+    console.log("🚀 ~ file: JavaScript.js:74 ~ sectionButtons.forEach ~ buttonTextHover:", buttonTextHover)
+    let buttonHover = item.children[1]
+    
+    let tl = gsap.timeline({
+        paused: true,
+        defaults: {
+            duration: 0.25,
+            ease: "power2.inOut"
+        }
+    }).to(buttonHover, {
+        xPercent: 100
+    }).to(buttonTextHover, {
+        yPercent: -100
+    }, "<50%")
+    
+    item.addEventListener("mouseover", function() {
+        tl.play();
+    });
+
+    item.addEventListener("mouseout", function() {
+        tl.reverse();
+    });
 })
 
 // -------------------- SECTION CHANGES -------------------- //
