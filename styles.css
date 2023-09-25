@@ -308,7 +308,7 @@ blockquote {
 }
 
 .topic-wrap {
-    display: relative;
+    position: relative;
     height: 100%;
     overflow: clip;
 }
@@ -376,9 +376,23 @@ blockquote {
     flex-direction: row-reverse;
 }
 
-.TB-bottom-left {
-    max-width: 35%;
+.TB-right {
+    flex: 1 1 65%;
+}
+
+.TB-left {
+    flex: 1 1 35%;
     font-size: var(--scale-2);
+}
+
+.TB-BR-date {
+    margin-top: 0;
+}
+
+.TB-quote {
+    padding: var(--scale-4) var(--scale0);
+    border: 2px solid green;
+    font-size: var(--scale-1);
 }
 
 /* --------------------
