@@ -9,6 +9,7 @@
     --mainLight-1: rgba(87, 108, 168, 0.5);
     --mainLight: rgba(87, 108, 168, 1);
     --greenAccent: rgba(32, 252, 143, 1);
+    --redAccent-1: rgba(219, 80, 74, 0.5);
     --redAccent: rgba(219, 80, 74, 1);
     --dark-2: rgba(49, 54, 40, 0.25);
     --dark-1: rgba(49, 54, 40, 0.50);
@@ -161,6 +162,111 @@ blockquote {
     color: var(--white);
 }
 
+.interactive-content-container {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--dark-1);
+    opacity: 0%;
+    transform: translateY(100%);
+    z-index: 5;
+}
+
+.interactive-content {
+    display: grid;
+    height: 80%;
+    width: 90%;
+    padding: 0 var(--scale2);
+    place-items: center;
+    background: url(./SVG/gggrain\(1\).svg) repeat;
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+.example-button-close-wrap {
+    position: relative;
+    height: var(--scale2);
+    width: min-content;
+    overflow: hidden;
+}
+
+.example-button-close {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: var(--scale-1) var(--scale1);
+    border-radius: 1rem;
+    background-color: var(--main);
+    font-family: var(--headingFont);
+    font-size: var(--scale-2);
+    font-variant-caps: titling-caps;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: clip;
+    z-index: 1;
+}
+
+.example-close-text {
+    position: relative;
+    display: inline-block;
+    color: var(--white);
+    overflow: clip;
+    z-index: 2;
+}
+
+.example-close-text-hover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: var(--main)
+}
+
+.example-button-close-hover {
+    position: absolute;
+    height: 100%;
+    width: 101%;
+    top: 0;
+    left: -101%;
+    padding: inherit;
+    background-color: var(--white);
+    z-index: -1;
+}
+
+.TBR-left {
+    grid-area: 1 / 1;
+    font-size: var(--scale-2);
+}
+
+.TB-left {
+    grid-area: 1 / 1;
+}
+
+.TB-date {
+    margin-top: 0;
+    color: var(--dark-1);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.codepen-example {
+    width: 100%;
+    box-shadow: -20px 20px var(--scale-4) 0 var(--dark-2);
+}
+
+.codepen-inactive {
+    display: none;
+}
+
+.codepen-active {
+    display: block;
+}
+
 /* --------------------
     GLOBAL TEMPLATES
 -------------------- */
@@ -168,14 +274,6 @@ blockquote {
 .wrapper {
     position: relative;
     min-height: min-content;
-}
-
-.section-change {
-    display: flex;
-    position: relative;
-    width: 100%;
-    align-items: center;
-    margin: var(--scale4) 0;
 }
 
 .inline-dot {
@@ -208,6 +306,14 @@ blockquote {
     font-weight: 800;
     white-space: nowrap;
     -webkit-text-stroke: 0.253rem var(--main);
+}
+
+.section-change {
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    margin: var(--scale4) 0;
 }
 
 /* --------------------
@@ -257,8 +363,8 @@ blockquote {
     display: flex;
     flex-direction: column;
     font-size: 5rem;
-    color: transparent;
-    -webkit-text-stroke: 1.414px var(--white);
+    color: var(--redAccent-1);
+    -webkit-text-stroke: var(--scale-6) var(--white);
     z-index: 1;
 }
 
@@ -369,6 +475,10 @@ blockquote {
 
 .TM-h3 {
     max-width: 40rem;
+    background: rgb(87,108,168);
+    background: linear-gradient(80deg, rgba(87,108,168,1) 25%, rgba(39,70,144,1) 100%); 
+    background-clip: text;
+    color: transparent;
     font-size: var(--scale3);
     margin: 0;
 }
@@ -485,34 +595,6 @@ blockquote {
     -webkit-backdrop-filter: blur(var(--scale-1));
 }
 
-
 /* --------------------
     COLOR CONTRAST
 -------------------- */
-
-.color-contrast-container {
-    grid-template-rows: 10% 1fr 1fr;
-}
-
-.CC {
-    height: 100%;
-}
-
-.CC-top {
-    grid-area: 1 / 1;
-}
-
-.CC-middle {
-    grid-area: 2 / 1;
-}
-
-.CC-h3 {
-    background: rgb(87,108,168);
-    background: linear-gradient(80deg, rgba(87,108,168,1) 25%, rgba(39,70,144,1) 100%); 
-    background-clip: text;
-    color: transparent;
-}
-
-.CC-bottom {
-    grid-area: 3 / 1;
-}

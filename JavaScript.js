@@ -48,7 +48,7 @@ let content = gsap.utils.toArray(".topic-wrap");
 
 content.forEach((item, index) => {
     let tl = gsap.timeline({
-        delay: 1,
+        delay: 0.2,
         stagger: 0.1,
         defaults: {
             duration: 1.5,
@@ -56,6 +56,9 @@ content.forEach((item, index) => {
         },
         scrollTrigger: {
             trigger: ".color-contrast-container",
+            once: true,
+            start: "top top",
+            end: "10% top"
         },
         ease: "ease.out"
     });
@@ -67,11 +70,12 @@ content.forEach((item, index) => {
     })
 });
 
-let sectionButtons = gsap.utils.toArray(".example-button");
+// Button animation
+
+let sectionButtons = gsap.utils.toArray(".animated-button");
 
 sectionButtons.forEach((item, index) => {
     let buttonTextHover = item.children[0].children[0];
-    console.log("🚀 ~ file: JavaScript.js:74 ~ sectionButtons.forEach ~ buttonTextHover:", buttonTextHover)
     let buttonHover = item.children[1]
     
     let tl = gsap.timeline({
@@ -112,7 +116,7 @@ sectionChanges.forEach((item) => {
             x: 500,
             scrollTrigger: {
                 trigger: sectionWrapper,
-                scrub: 1,
+                scrub: 1.2,
                 ease: "power2.inOut"
             }
         })
@@ -123,12 +127,41 @@ sectionChanges.forEach((item) => {
             x: -500,
             scrollTrigger: {
                 trigger: sectionWrapper,
-                scrub: 1,
+                scrub: 1.2,
                 ease: "power2.inOut"
             }
         })
     }
 });
+
+// -------------------- INTERACTIVE EXAMPLES -------------------- //
+
+const codePenExample = document.getElementsByClassName("codepen-example")[0];
+
+let interactiveExample = gsap.timeline({
+    delay: 1,
+    paused: true
+})
+.add(showModal());
+
+function showModal() {
+    let tl = gsap.timeline();
+    tl.to(".interactive-content-container", {
+        duration: 1,
+        yPercent: -100,
+        opacity: "100%",
+        ease: "power2.inOut"
+    })
+    return tl;
+}
+
+function exampleRequest() {
+    interactiveExample.play();
+}
+
+function exampleClose() {
+    interactiveExample.reverse()
+}
 
 // -------------------- BACK TO TOP -------------------- //
 

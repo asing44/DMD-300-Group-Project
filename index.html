@@ -26,6 +26,21 @@
     <div class="back-to-top-wrapper">
       <button type="button" class="back-to-top" role="Go back to the top of the page."><i class="fa-solid fa-angle-up"></i></button>
     </div>
+    <div class="interactive-content-container">
+      <main class="interactive-content">
+        <div class="codepen-example">
+          <p class="codepen CC-example codepen-inactive" data-height="580" data-default-tab="result" data-slug-hash="qBLXOOz" data-user="asing44" style="height: 580px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"><span>See the Pen <a href="https://codepen.io/asing44/pen/qBLXOOz">DMD 300 Project Example - Color Contrast</a> by asing44 (<a href="https://codepen.io/asing44">@asing44</a>)on <a href="https://codepen.io">CodePen</a>.</span></p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+      </main>
+      <div class="example-button-close-wrap">
+        <button class="example-button-close animated-button" onClick=exampleClose()>
+          <span class="example-close-text">close
+            <span class="example-close-text-hover">close</span>
+          </span>
+          <div class="example-button-close-hover"></div>
+        </button>
+      </div>
+    </div>
     <main class="hero" role="Hero section">
       <div class="wrapper hero-h1-wrapper">
         <h1 class="hero-h1">color accessibility for the web</h1>
@@ -48,7 +63,7 @@
           <div class="topic-wrap CC-top-wrapper">
             <section class="TT-header CC-header">
               <h2 class="TT-heading CC-heading topic-wrap"><div class="topic-wrap topic-wrap">color contrast</div></h2>
-              <p class="team-name CC-team-name topic-wrap">Team name</p>
+              <p class="team-name CC-team-name topic-wrap">DMD 300 Group 3</p>
             </section>
           </div>
         </section>
@@ -62,13 +77,13 @@
             </div>
           </section>
         </section>
-        <section class="TB CC-bottom">
+        <section class="TB CC-bottom topic-wrap">
             <section class="TB-right topic-wrap">
               <p class="TBR-left TB-date">Sept. 2023</p>
-              <section class="TBR-right">
+              <section class="TBR-right topic-wrap">
                 <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <div class="example-button-wrap topic-wrap">
-                <button class="TBR-button example-button" type="button">
+                <button id="CC-example" class="TBR-button example-button animated-button" type="button" onClick=exampleRequest(this)>
                   <span class="example-button-text">interactive example
                     <span class="example-button-text-hover">interactive example</span>
                   </span>
@@ -77,8 +92,8 @@
               </div>
               </section>
             </section>
-            <section class="TB-left">
-              <div class="topic-wrap TB-wrapper">
+            <section class="TB-left topic-wrap">
+              <div class="topic-wrap">
                 <blockquote class="TB-quote">
                   “This will be a related quote or comment from a professional source about color contrast“&nbsp;-&nbsp;<cite class="TB-quote-cite"><em>Citation</em></cite>
                 </blockquote>
@@ -87,6 +102,9 @@
           </section>
       </div>
     </main>
+    <section class="section-change color-information-change">
+      <div class="wrapper section-change-wrapper reverse">color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info</div>
+    </section>
   </body>
   <script src="./JavaScript.js"></script>
 </html>
