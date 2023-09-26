@@ -10,8 +10,6 @@ gsap.config({
 
 console.clear();
 
-ScrollTrigger.normalizeScroll(true);
-
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
 console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
