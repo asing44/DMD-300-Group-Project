@@ -175,33 +175,6 @@ blockquote {
     color: var(--white);
 }
 
-.interactive-content-container {
-    position: fixed;
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--dark-1);
-    opacity: 0%;
-    transform: translateY(100%);
-    z-index: 5;
-}
-
-.interactive-content {
-    display: grid;
-    height: 80%;
-    width: 90%;
-    padding: 0 var(--scale2);
-    place-items: center;
-    background: url(./SVG/gggrain\(1\).svg) repeat;
-    background-size: cover;
-    border-radius: 1rem;
-}
-
 .example-button-close-wrap {
     position: relative;
     height: var(--scale2);
@@ -265,19 +238,6 @@ blockquote {
     color: var(--dark-1);
     text-align: left;
     white-space: nowrap;
-}
-
-.codepen-example {
-    width: 100%;
-    box-shadow: -20px 20px var(--scale-4) 0 var(--dark-2);
-}
-
-.codepen-inactive {
-    display: none;
-}
-
-.codepen-active {
-    display: block;
 }
 
 /* --------------------
@@ -609,8 +569,63 @@ blockquote {
 }
 
 /* --------------------
-    COLOR CONTRAST
+    INTERACTIVE EXAMPLES
 -------------------- */
+
+.interactive-content-container {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--dark-1);
+    opacity: 0%;
+    transform: translateY(100%);
+    z-index: 5;
+}
+
+.interactive-content {
+    position: relative;
+    display: grid;
+    height: 80%;
+    width: 90%;
+    padding: 0 var(--scale2);
+    place-items: center;
+    background: url(./SVG/gggrain\(1\).svg) repeat;
+    background-size: cover;
+    border-radius: 1rem;
+}
+
+.codepen-example {
+    position: relative;
+    height: 85%;
+    width: 85%;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    box-shadow: -20px 20px var(--scale-4) 0 var(--dark-2);
+}
+
+.codepen-example > div {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.codepen-example iframe {
+    height: 100%;
+}
+
+.codepen-inactive {
+    display: none;
+}
+
+.codepen-active {
+    display: grid;
+}
 
 /* --------------------
     FOOTER

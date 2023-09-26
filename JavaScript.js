@@ -189,7 +189,7 @@ sectionChanges.forEach((item) => {
 
 // -------------------- INTERACTIVE EXAMPLES -------------------- //
 
-const codePenExample = document.getElementsByClassName("codepen-example")[0];
+const codePenContent = document.getElementsByClassName("codepen-example");
 
 let interactiveExample = gsap.timeline({
     delay: 1,
@@ -208,7 +208,20 @@ function showModal() {
     return tl;
 }
 
-function exampleRequest() {
+function exampleRequest(btn) {
+    console.log(btn.id);
+    let selected = btn.id;
+    for (let i = 0; i <= codePenContent.length - 1; i++) {
+        console.log(codePenContent[i].id)
+        if (codePenContent[i].id == selected) {
+            codePenContent[i].classList.remove("codepen-inactive");
+            codePenContent[i].classList.add("codepen-active");
+        } else {
+            codePenContent[i].classList.remove("codepen-active");
+            codePenContent[i].classList.add("codepen-inactive");
+        }
+    }
+    console.log(codePenContent)
     interactiveExample.play();
 }
 
