@@ -116,10 +116,10 @@ disabilityExamplesContent.forEach((item, index) => {
         ease: "ease.out"
     });
     gsap.set(item, {
-        y: -550
+        yPercent: -100
     })
     tl.to(item, {
-        y: 0,
+        yPercent: 0,
     })
 });
 
