@@ -5,7 +5,10 @@ gsap.registerPlugin(ScrollToPlugin);
 
 gsap.config({
     autoSleep: 60,
+    trialWarn: false
 });
+
+console.clear();
 
 ScrollTrigger.normalizeScroll(true);
 
@@ -44,9 +47,9 @@ gsap.to(heroArrow, {
 
 // -------------------- TOPIC SECTIONS -------------------- //
 
-let content = gsap.utils.toArray(".topic-wrap");
+let colorContrastContent = gsap.utils.toArray(".CC-wrap");
 
-content.forEach((item, index) => {
+colorContrastContent.forEach((item, index) => {
     let tl = gsap.timeline({
         delay: 0.2,
         stagger: 0.1,
@@ -70,7 +73,59 @@ content.forEach((item, index) => {
     })
 });
 
-// Button animation
+let colorInformationContent = gsap.utils.toArray(".CI-wrap");
+
+colorInformationContent.forEach((item, index) => {
+    let tl = gsap.timeline({
+        delay: 0.2,
+        stagger: 0.1,
+        defaults: {
+            duration: 1.5,
+            ease: "power3.out"
+        },
+        scrollTrigger: {
+            trigger: ".color-information-container",
+            once: true,
+            start: "top top",
+            end: "10% top"
+        },
+        ease: "ease.out"
+    });
+    gsap.set(item, {
+        y: -500
+    })
+    tl.to(item, {
+        y: 0,
+    })
+});
+
+let disabilityExamplesContent = gsap.utils.toArray(".DE-wrap");
+
+disabilityExamplesContent.forEach((item, index) => {
+    let tl = gsap.timeline({
+        delay: 0.2,
+        stagger: 0.1,
+        defaults: {
+            duration: 1.5,
+            ease: "power3.out"
+        },
+        scrollTrigger: {
+            trigger: ".disability-examples-container",
+            once: true,
+            start: "top top",
+            end: "10% top"
+        },
+        ease: "ease.out"
+    });
+    gsap.set(item, {
+        y: -500
+    })
+    tl.to(item, {
+        y: 0,
+    })
+});
+
+// -------------------- BUTTONS -------------------- //
 
 let sectionButtons = gsap.utils.toArray(".animated-button");
 
@@ -184,4 +239,3 @@ backToTop.addEventListener("click", () => {
         ease: "power3.out",
     });
 });
-

@@ -57,11 +57,14 @@
 }
 
 html {
+    height: -webkit-fill-available;
+    width: 100%;
     font-size: 100%;
 }
 
 body {
     min-height: 100vh;
+    min-height: -webkit-fill-available;
     width: 100%;
     margin: 0;
     padding: 0 var(--scale2);
@@ -70,6 +73,7 @@ body {
     font-kerning: auto;
     line-height: 1.75;
     kerning: auto;
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
@@ -119,7 +123,7 @@ blockquote {
 
 #grainy-gradient {
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     top: 0;
     left: 0;
@@ -598,3 +602,16 @@ blockquote {
 /* --------------------
     COLOR CONTRAST
 -------------------- */
+
+/* --------------------
+    FOOTER
+-------------------- */
+
+footer {
+    position: relative;
+    display: block;
+    min-height: 40vh;
+    width: 100%;
+    background-color: var(--dark);
+    z-index: 1;
+}
