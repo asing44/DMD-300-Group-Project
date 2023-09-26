@@ -1,7 +1,16 @@
 :root {
+    /* Fonts */
     --headingFont: 'Fira Sans', sans-serif;
     --bodyFont: 'Montserrat', sans-serif;
-    
+    --font-size-sm: clamp(0.71rem, 0.32vw + 0.63rem, 0.88rem);
+    --font-size-base: clamp(1rem, 0.45vw + 0.89rem, 1.25rem);
+    --font-size-md: clamp(1.41rem, 0.64vw + 1.25rem, 1.77rem);
+    --font-size-lg: clamp(2rem, 0.91vw + 1.77rem, 2.5rem);
+    --font-size-xl: clamp(2.83rem, 1.29vw + 2.51rem, 3.53rem);
+    --font-size-xxl: clamp(4rem, 1.82vw + 3.54rem, 5rem);
+    --font-size-xxxl: clamp(5.65rem, 2.57vw + 5.01rem, 7.07rem);
+    /* Colors */
+
     --white-2: rgba(242, 244, 247, 0.25);
     --white-1: rgba(242, 244, 247, 0.5);
     --white: rgba(242, 244, 247, 1);
@@ -14,7 +23,8 @@
     --dark-2: rgba(49, 54, 40, 0.25);
     --dark-1: rgba(49, 54, 40, 0.50);
     --dark: rgba(49, 54, 40, 1); /* #130209 */
- 
+
+    /* Scaling */
     --scale-7: 1.414px;
     --scale-6: 2.000px;
     --scale-5: 0.253rem;
@@ -28,21 +38,19 @@
     --scale3: 4.000rem;
     --scale4: 5.652rem;
     --scale5: 7.992rem;
-
 }
 
 /* --------------------
     RESPONSIVE FONT
 -------------------- */
 
-@media (min-width: 768px) {
+@media (min-width: 0px) {
     :root {
-      font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
-      min-height: 0vw;
+        font-size: clamp(0.625rem, 0.125rem + 2vw, 1.25rem);
     }
 }
 
-@media (min-width: 1920px) {f
+@media (min-width: 850px) {
     :root {
       font-size: 24px;
     }
@@ -57,9 +65,9 @@
 }
 
 html {
+    height: 100%;
     height: -webkit-fill-available;
     width: 100%;
-    font-size: 100%;
 }
 
 body {
@@ -75,7 +83,6 @@ body {
     kerning: auto;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
 

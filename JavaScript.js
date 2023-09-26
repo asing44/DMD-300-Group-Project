@@ -64,7 +64,7 @@ colorContrastContent.forEach((item, index) => {
         ease: "ease.out"
     });
     gsap.set(item, {
-        y: -500
+        y: -550
     })
     tl.to(item, {
         y: 0,
@@ -90,7 +90,7 @@ colorInformationContent.forEach((item, index) => {
         ease: "ease.out"
     });
     gsap.set(item, {
-        y: -500
+        y: -700
     })
     tl.to(item, {
         y: 0,
@@ -116,7 +116,7 @@ disabilityExamplesContent.forEach((item, index) => {
         ease: "ease.out"
     });
     gsap.set(item, {
-        y: -500
+        y: -550
     })
     tl.to(item, {
         y: 0,
