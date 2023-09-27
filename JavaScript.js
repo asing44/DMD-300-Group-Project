@@ -208,10 +208,8 @@ function showModal() {
 }
 
 function exampleRequest(btn) {
-    console.log(btn.id);
     let selected = btn.id;
     for (let i = 0; i <= codePenContent.length - 1; i++) {
-        console.log(codePenContent[i].id)
         if (codePenContent[i].id == selected) {
             codePenContent[i].classList.remove("codepen-inactive");
             codePenContent[i].classList.add("codepen-active");
@@ -220,7 +218,6 @@ function exampleRequest(btn) {
             codePenContent[i].classList.add("codepen-inactive");
         }
     }
-    console.log(codePenContent)
     interactiveExample.play();
 }
 
