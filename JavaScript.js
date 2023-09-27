@@ -3,8 +3,9 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
+ScrollTrigger.refresh();
+
 gsap.config({
-    autoSleep: 60,
     trialWarn: false
 });
 

@@ -83,7 +83,6 @@ body {
     kerning: auto;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* --------------------
@@ -297,8 +296,8 @@ blockquote {
 }
 
 .section-change {
-    display: flex;
     position: relative;
+    display: flex;
     width: 100%;
     align-items: center;
     margin: var(--scale4) 0;
@@ -668,7 +667,8 @@ footer {
     position: relative;
     display: block;
     min-height: 40vh;
-    width: 100%;
-    background-color: var(--dark);
+    width: 100vw;
+    bottom: 0;
+    left: calc(-1 * var(--scale2));
     z-index: 1;
 }
