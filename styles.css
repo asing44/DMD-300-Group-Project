@@ -386,6 +386,19 @@ a {
 .intro-top {
     display: flex;
     grid-area: 2 / 1;
+    justify-content: space-around;
+    column-gap: var(--scale1);
+    padding: var(--scale2) var(--scale1);
+}
+
+.intro-quote {
+    padding: var(--scale-1) var(--scale0);
+    border: var(--scale-6) solid var(--white-1);
+    border-radius: 1rem;
+}
+
+.intro-stat { 
+
 }
 
 .intro-bottom {
@@ -397,8 +410,36 @@ a {
     padding: var(--scale-2) var(--scale0);
 }
 
-.intro-content {
+.intro-content-wrap {
     flex: 1 1 50%;
+    margin: 0;
+}
+
+.intro-content-header {
+    width: min-content;
+    margin-top: 0;
+    padding: var(--scale-5) var(--scale-2);
+    border: var(--scale-7) solid var(--white);
+    border-radius: var(--scale-2);
+    background: linear-gradient(219deg, 
+    var(--redAccent) 19%, 
+    transparent 19%,transparent 20%, 
+    var(--mainLight) 20%, var(--mainLight)  39%,
+    transparent 39%,transparent 40%, 
+    var(--main) 40%,var(--main) 59% ,
+    transparent 59%,transparent 60%, 
+    var(--mainLight) 60%, var(--mainLight) 79%,
+    transparent 79%, transparent 80%, 
+    var(--redAccent) 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 500; /* TODO change font weights! */
+    backdrop-filter: blur(var(--scale-1));
+    -webkit-backdrop-filter: blur(var(--scale-1));
+}
+
+.intro-content {
     margin: 0;
 }
 
@@ -425,10 +466,6 @@ a {
     flex-direction: column;
     justify-content: space-evenly;
     row-gap: var(--scale-2);
-}
-
-.intro-stat { 
-
 }
 
 /* --------------------
