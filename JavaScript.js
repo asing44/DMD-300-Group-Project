@@ -3,8 +3,6 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
-ScrollTrigger.refresh();
-
 gsap.config({
     trialWarn: false
 });
@@ -251,3 +249,11 @@ backToTop.addEventListener("click", () => {
         ease: "power3.out",
     });
 });
+
+// -------------------- FOOTER -------------------- //
+
+
+
+// -------------------- REFRESH -------------------- //
+
+ScrollTrigger.refresh();
