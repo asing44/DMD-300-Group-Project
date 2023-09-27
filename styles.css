@@ -68,6 +68,7 @@ html {
     height: 100%;
     height: -webkit-fill-available;
     width: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -129,6 +130,15 @@ a {
     color: var(--dark);
     list-style: none;
     text-decoration: none;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
 }
 
 /* --------------------
@@ -267,8 +277,9 @@ a {
     background-color: var(--mainLight);
 }
 
-.underline {
-
+.underlined {
+    text-decoration: underline solid var(--redAccent-1) var(--scale-6);
+    text-underline-offset: -1 * var(--scale-7);
 }
 
 .text-highlight {
