@@ -148,7 +148,7 @@ li {
 #grainy-gradient {
     position: fixed;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     top: 0;
     left: 0;
     background: url(./SVG/gggrain\(1\).svg) repeat;
@@ -239,22 +239,6 @@ li {
     z-index: -1;
 }
 
-.TBR-left {
-    grid-area: 1 / 1;
-    font-size: var(--scale-2);
-}
-
-.TB-left {
-    grid-area: 1 / 1;
-}
-
-.TB-date {
-    margin-top: 0;
-    color: var(--dark-1);
-    text-align: left;
-    white-space: nowrap;
-}
-
 /* --------------------
     GLOBAL TEMPLATES
 -------------------- */
@@ -298,26 +282,25 @@ li {
 }
 
 /* --------------------
-    PAGE CHANGES
+    SECTION CHANGES
 -------------------- */
 
-.section-change-wrapper {
+.section-change-container {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    width: 100vw;
+    margin: var(--scale4) 0;
+    transform: translateX(calc(-1 * var(--scale2)));
+    overflow-x: hidden;
+}
+
+.section-change-wrapper {
     color: transparent;
     font-family: var(--headingFont);
     font-size: 7rem;
     font-weight: 800;
     white-space: nowrap;
     -webkit-text-stroke: 0.253rem var(--main);
-}
-
-.section-change {
-    position: relative;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    margin: var(--scale4) 0;
 }
 
 /* --------------------
