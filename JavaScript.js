@@ -48,11 +48,11 @@ let colorContrastContent = gsap.utils.toArray(".CC-wrap");
 
 colorContrastContent.forEach((item, index) => {
     let tl = gsap.timeline({
-        delay: 0.2,
+        delay: 0.1,
         stagger: 0.1,
         defaults: {
             duration: 1.5,
-            ease: "power3.out"
+            ease: "power3.inOut"
         },
         scrollTrigger: {
             trigger: ".color-contrast-container",
@@ -60,7 +60,7 @@ colorContrastContent.forEach((item, index) => {
             start: "top top",
             end: "10% top"
         },
-        ease: "ease.out"
+        ease: "power3.inOut"
     });
     gsap.set(item, {
         y: -550
@@ -74,11 +74,11 @@ let colorInformationContent = gsap.utils.toArray(".CI-wrap");
 
 colorInformationContent.forEach((item, index) => {
     let tl = gsap.timeline({
-        delay: 0.2,
+        delay: 0.1,
         stagger: 0.1,
         defaults: {
             duration: 1.5,
-            ease: "power3.out"
+            ease: "power3.inOutt"
         },
         scrollTrigger: {
             trigger: ".color-information-container",
@@ -86,7 +86,7 @@ colorInformationContent.forEach((item, index) => {
             start: "top top",
             end: "10% top"
         },
-        ease: "ease.out"
+        ease: "power3.inOut"
     });
     gsap.set(item, {
         y: -700
@@ -100,7 +100,7 @@ let disabilityExamplesContent = gsap.utils.toArray(".DE-wrap");
 
 disabilityExamplesContent.forEach((item, index) => {
     let tl = gsap.timeline({
-        delay: 0.2,
+        delay: 0.1,
         stagger: 0.1,
         defaults: {
             duration: 1.5,
@@ -112,7 +112,7 @@ disabilityExamplesContent.forEach((item, index) => {
             start: "top top",
             end: "10% top"
         },
-        ease: "ease.out"
+        ease: "power3.inOut"
     });
     gsap.set(item, {
         yPercent: -100
@@ -122,13 +122,17 @@ disabilityExamplesContent.forEach((item, index) => {
     })
 });
 
+// -------------------- LINKS -------------------- //
+
+
+
 // -------------------- BUTTONS -------------------- //
 
-let sectionButtons = gsap.utils.toArray(".animated-button");
+let animatedElement = gsap.utils.toArray(".animated-hover");
 
-sectionButtons.forEach((item, index) => {
-    let buttonTextHover = item.children[0].children[0];
-    let buttonHover = item.children[1]
+animatedElement.forEach((item, index) => {
+    let elementTextHover = item.children[0].children[0];
+    let elementHover = item.children[1]
     
     let tl = gsap.timeline({
         paused: true,
@@ -136,9 +140,9 @@ sectionButtons.forEach((item, index) => {
             duration: 0.25,
             ease: "power2.inOut"
         }
-    }).to(buttonHover, {
+    }).to(elementHover, {
         xPercent: 100
-    }).to(buttonTextHover, {
+    }).to(elementTextHover, {
         yPercent: -100
     }, "<50%")
     

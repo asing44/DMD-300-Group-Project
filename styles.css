@@ -103,8 +103,11 @@ h1 {
   font-size: 5.653rem;
 }
 
-p {margin-bottom: 1rem;}
-
+p {
+    margin: 0;
+    margin-bottom: var(--scale-1);
+    text-indent: var(--scale2);
+}
 
 h2 {font-size: 3.998rem;}
 
@@ -243,6 +246,10 @@ li {
     GLOBAL TEMPLATES
 -------------------- */
 
+.wrap {
+    overflow: hidden;
+}
+
 .wrapper {
     position: relative;
     min-height: min-content;
@@ -261,13 +268,26 @@ li {
     background-color: var(--mainLight);
 }
 
-.underlined {
-    text-decoration: underline solid var(--redAccent-1) var(--scale-6);
-    text-underline-offset: -1 * var(--scale-7);
+.highlight {
+    font-weight: 500;
+    color: var(--main);
 }
 
-.text-highlight {
+.underlined {
+    text-decoration: underline solid var(--redAccent-1);
+    text-decoration-thickness: var(--scale-6);
+    text-underline-offset: -1 * var(--scale-7);
+    text-decoration-skip-ink: none;
+    transition: text-decoration-thickness 300ms ease-in-out;
+}
 
+.underlined:hover, .underlined:focus {
+    text-decoration-thickness: var(--scale-5);
+}
+
+.inline-citation {
+    text-decoration: underline solid var(--redAccent-1) var(--scale-5);
+    text-decoration-skip-ink: none;
 }
 
 .quote-marks {
@@ -279,6 +299,12 @@ li {
     align-items: center;
     color: var(--redAccent-1);
     font-size: var(--scale0)
+}
+
+.animated-link {
+    position: relative;
+    display: inline-flex;
+    text-indent: 0;
 }
 
 /* --------------------
@@ -364,12 +390,12 @@ li {
     display: grid;
     height: clamp(100vh, auto, 150vh);
     width: 100%;
-    grid-template: 1fr auto 2fr / 100%;
+    grid-template: auto 1fr auto 2fr / 100%;
     z-index: 1;
 }
 
 .intro-h2 {
-    grid-area: 1 / 1;
+    grid-area: 2 / 1;
     margin-top: 0;
     background: rgb(87,108,168);
     background: linear-gradient(80deg, rgba(87,108,168,0.7) 25%, rgba(39,70,144,1) 100%); 
@@ -379,33 +405,34 @@ li {
 
 .intro-top {
     display: flex;
-    grid-area: 2 / 1;
+    grid-area: 3 / 1;
     justify-content: space-around;
     column-gap: var(--scale1);
     padding: var(--scale2) var(--scale1);
 }
 
 .intro-quote {
+    display: flex;
+    height: min-content;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0;
     padding: var(--scale-1) var(--scale0);
     border: var(--scale-6) solid var(--white-1);
     border-radius: 1rem;
 }
 
-.intro-stat { 
-
-}
-
 .intro-bottom {
     display: flex;
-    grid-area: 3 / 1;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: var(--scale-1);
+    grid-area: 4 / 1;
+    flex-direction: column;
+    row-gap: var(--scale-1);
     padding: var(--scale-2) var(--scale0);
 }
 
 .intro-content-wrap {
-    flex: 1 1 50%;
     margin: 0;
 }
 
@@ -428,38 +455,43 @@ li {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    font-weight: 500; /* TODO change font weights! */
+    font-weight: 500;
     backdrop-filter: blur(var(--scale-1));
     -webkit-backdrop-filter: blur(var(--scale-1));
-}
-
-.intro-content {
-    margin: 0;
 }
 
 .intro-aside {
     position: relative;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex: 1;
     padding: var(--scale-1) var(--scale-1);
-    border: var(--scale-6) solid var(--white-1);
-    border-radius: 1rem;
-    backdrop-filter: blur(var(--scale-1));
-    -webkit-backdrop-filter: blur(var(--scale-1));
 }
 
-.aside-heading {
-    margin-top: 0;
-    color: var(--mainLight)
-}
-
-.aside-links {
+.aside-links-list {
     display: flex;
-    height: 70%;
-    flex-direction: column;
+    width: 100%;
     justify-content: space-evenly;
     row-gap: var(--scale-2);
+}
+
+.aside-link {
+    margin: 0;
+    padding: var(--scale-4) var(--scale-2);
+    border: var(--scale-6) solid var(--white-1);
+    border-radius: 1rem;
+    color: var(--mainLight);
+    font-size: var(--scale0);
+    font-variant: small-caps;
+    font-weight: 500;
+    backdrop-filter: blur(var(--scale-1));
+    -webkit-backdrop-filter: blur(var(--scale-1));
+    transition: color 300ms ease-in-out;
+}
+
+.aside-link:hover {
+    color: var(--main);
 }
 
 /* --------------------
@@ -514,7 +546,7 @@ li {
 .topic-wrap {
     position: relative;
     height: 100%;
-    overflow: clip;
+    overflow: hidden;
 }
 
 .TT-header {

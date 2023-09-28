@@ -6,256 +6,332 @@
     - Theme mode
  -->
 <html>
-  <head>
-    <title>Color Accessibility For The Web</title>
-    <meta name="description" content="A site for web designers and developers that showcases best practices for implementing proper color accessibility on the web.">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/f9e9cf76b4.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-  </head>
-  <body>
-    <div id="grainy-gradient"></div>
-    <div class="back-to-top-wrapper">
-      <button type="button" class="back-to-top" role="Go back to the top of the page."><i class="fa-solid fa-angle-up"></i></button>
-    </div>
-    <div class="interactive-content-container">
-      <section class="interactive-content">
-        <div id="CC-example" class="codepen-example codepen-inactive">
-          <p class="codepen" data-height="550" data-default-tab="result" data-slug-hash="qBLXOOz" data-user="asing44" style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen <a href="https://codepen.io/asing44/pen/qBLXOOz">
-            DMD 300 Project Example - Color Contrast</a> by asing44 (<a href="https://codepen.io/asing44">@asing44</a>)
+
+<head>
+  <title>Color Accessibility For The Web</title>
+  <meta name="description"
+    content="A site for web designers and developers that showcases best practices for implementing proper color accessibility on the web.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f9e9cf76b4.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Start scroll at top -->
+  <script>
+    $(window).scrollTop(0)
+  </script>
+  <div id="grainy-gradient"></div>
+  <div class="back-to-top-wrapper">
+    <button type="button" class="back-to-top" role="Go back to the top of the page."><i
+        class="fa-solid fa-angle-up"></i></button>
+  </div>
+  <div class="interactive-content-container">
+    <section class="interactive-content">
+      <div id="CC-example" class="codepen-example codepen-inactive">
+        <p class="codepen" data-height="550" data-default-tab="result" data-slug-hash="qBLXOOz" data-user="asing44"
+          style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/asing44/pen/qBLXOOz">
+              DMD 300 Project Example - Color Contrast</a> by asing44 (<a
+              href="https://codepen.io/asing44">@asing44</a>)
             on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div id="CI-example" class="codepen-example codepen-active">
-          <p class="codepen" data-default-tab="result" data-slug-hash="oNJogdY" data-user="asing44" style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen <a href="https://codepen.io/asing44/pen/oNJogdY">
-            DMD 300 Project Example - Color Information</a> by asing44 (<a href="https://codepen.io/asing44">@asing44</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-        </div>
-        <div id="DE-example" class="codepen-example codepen-active">
-          <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="JjwvLpW" data-user="asing44" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-            <span>See the Pen <a href="https://codepen.io/asing44/pen/JjwvLpW">
-            DMD 300 Project Example - Color Disability</a> by asing44 (<a href="https://codepen.io/asing44">@asing44</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span>
-          </p>
-          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-        </div>
-      </section>
-      <div class="example-button-close-wrap">
-        <button class="example-button-close animated-button" onClick=exampleClose()>
-          <span class="example-close-text">close
-            <span class="example-close-text-hover">close</span>
-          </span>
-          <div class="example-button-close-hover"></div>
-        </button>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
       </div>
-    </div>
-    <section class="hero">
-      <div class="wrapper hero-h1-wrapper">
-        <h1 class="hero-h1">color accessibility for the web</h1>
+      <div id="CI-example" class="codepen-example codepen-active">
+        <p class="codepen" data-default-tab="result" data-slug-hash="oNJogdY" data-user="asing44"
+          style="box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/asing44/pen/oNJogdY">
+              DMD 300 Project Example - Color Information</a> by asing44 (<a
+              href="https://codepen.io/asing44">@asing44</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
       </div>
-      <div class="wrapper hero-arrow">
-        <i class="fa-solid fa-angle-down"></i>
+      <div id="DE-example" class="codepen-example codepen-active">
+        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="JjwvLpW" data-user="asing44"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/asing44/pen/JjwvLpW">
+              DMD 300 Project Example - Color Disability</a> by asing44 (<a
+              href="https://codepen.io/asing44">@asing44</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
       </div>
     </section>
-    <div class="section-change-container introduction-change">
-      <div class="wrapper section-change-wrapper">introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction</div>
+    <div class="example-button-close-wrap">
+      <button class="example-button-close animated-hover" onClick=exampleClose()>
+        <span class="example-close-text">close
+          <span class="example-close-text-hover">close</span>
+        </span>
+        <div class="example-button-close-hover"></div>
+      </button>
     </div>
-    <section class="introduciton">
-      <div class="wrap">
-        <h2 class="intro-h2">The Importance of Color in Web Accessibility</h2>
+  </div>
+  <section class="hero">
+    <div class="wrapper hero-h1-wrapper">
+      <h1 class="hero-h1">color accessibility for the web</h1>
+    </div>
+    <div class="wrapper hero-arrow">
+      <i class="fa-solid fa-angle-down"></i>
+    </div>
+  </section>
+  <div class="section-change-container introduction-change">
+    <div class="wrapper section-change-wrapper">
+      introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction
+    </div>
+  </div>
+  <section class="introduciton">
+    <div class="section-divider"></div>
+    <div class="wrap">
+      <h2 class="intro-h2">Making the Web Friendly for Everyone: How Colors Matter</h2>
+    </div>
+    <section class="wrap intro-top">
+      <div class="wrap intro-quote">
+        <blockquote class="intro-stat stat-1"><span class="quote-marks">"</span><span class="highlight">96.8%</span> of homepages had detectable <span class="highlight">WCAG 2 failures</span>.<span class="quote-marks">"</span></blockquote>&nbsp;
+        <span>- <cite>citation</cite></span>
       </div>
-      <section class="wrap intro-top">
-        <div class="wrap intro-quote">
-          <blockquote class="intro-stat stat-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>&nbsp;-&nbsp;
-          <cite>citation</cite>
-        </div>
-        <div class="wrap intro-quote">
-          <blockquote class="intro-stat stat-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</blockquote>&nbsp;-&nbsp;
-          <cite>citation</cite>
-        </div>
-      </section>
-      <section class="wrap intro-bottom">
-        <div class="wrap intro-content-wrap">
+      <div class="wrap intro-quote">
+        <blockquote class="intro-stat stat-2"><span class="quote-marks">"</span><span class="highlight">4.9%</span> of U.S. adults have a <span class="highlight">vision disability</span> with blindness or serious difficulty seeing even when wearing glasses, requiring screen readers.<span class="quote-marks">"</span></blockquote>&nbsp;
+        <span>- <cite>citation</cite></span>
+      </div>
+    </section>
+    <section class="wrap intro-bottom">
+      <div class="wrap intro-content-wrap">
         <h4 class="intro-content-header">Introduction</h4>
-        <p class="intro-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A erat nam at lectus urna duis convallis convallis. Consectetur adipiscing elit ut aliquam purus sit. Nulla facilisi morbi tempus iaculis urna. At tempor commodo ullamcorper a lacus vestibulum. Fermentum posuere urna nec tincidunt. Commodo elit at imperdiet dui. Ut sem nulla pharetra diam sit amet nisl suscipit adipiscing. Quis varius quam quisque id. Mauris a diam maecenas sed. Consequat mauris nunc congue nisi. Leo urna molestie at elementum eu facilisis sed odio. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh.</p>
-        </div>
-        <div class="wrap">
+        <p class="intro-content">
+          <p>Think about the internet as a big colorful playground. It's exciting, but not everyone sees the same colors or plays the same way. That's why making websites is a bit like being an artist and a scientist. Welcome to our journey into web design, where we focus on <span class="highlight">three important things</span>:</p>&nbsp;
+        </p>
+      </div>
+      <div class="wrap">
         <aside class="intro-aside">
-          <h5 class="aside-heading">What's covered</h5>
-          <div class="wrap aside-links">
-            <ul>
+            <ul class="aside-links-list">
               <li class="underlined"><a class="aside-link" href="#CC">Color contrast</a></li>
               <li class="underlined"><a class="aside-link" href="#CI">Communicating with color</a></li>
               <li class="underlined"><a class="aside-link" href="#DE">Color disabilities</a></li>
             </ul>
-          </div>
         </aside>
+      </div>
+    </section>
+  </section>
+  <div class="section-change color-contrast-change">
+    <div class="wrapper section-change-wrapper reverse">color contrast&nbsp;&nbsp;&nbsp;&nbsp;color
+      contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast</div>
+  </div>
+  <section id="CC" class="topic color-contrast">
+    <div class="topic-container color-contrast-container">
+      <section class="TT CC-top">
+        <div class="section-divider"></div>
+        <div class="topic-wrap CC-top-wrapper">
+          <section class="TT-header CC-header">
+            <h2 class="TT-heading CC-heading topic-wrap CC-wrap">
+              <div class="topic-wrap CC-wrap">color contrast</div>
+            </h2>
+            <p class="team-name CC-team-name topic-wrap CC-wrap">DMD 300 Group 3</p>
+          </section>
         </div>
       </section>
-    </section>
-    <div class="section-change color-contrast-change">
-      <div class="wrapper section-change-wrapper reverse">color contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast</div>
+      <section class="TM CC-middle">
+        <section class="TM-right CC-middle-right">
+          <h3 class="TM-h3 CC-h3 topic-wrap CC-wrap">This will be a short introduction to color contrast</h3>
+        </section>
+        <section class="TM-left CC-middle-left">
+          <div class="TM-pagination-wrapper">
+            <div class="topic-pagination CC-pagination">3</div>
+          </div>
+        </section>
+      </section>
+      <section class="TB CC-bottom topic-wrap CC-wrap">
+        <section class="TB-right topic-wrap CC-wrap">
+          <p class="TBR-left TB-date">Sept. 2023</p>
+          <section class="TBR-right topic-wrap CC-wrap">
+            <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+            <div class="example-button-wrap topic-wrap CC-wrap">
+              <button id="CC-example" class="TBR-button example-button animated-hover" type="button"
+                onClick=exampleRequest(this)>
+                <span class="example-button-text">interactive example
+                  <span class="example-button-text-hover">interactive example</span>
+                </span>
+                <div class="example-button-hover"></div>
+              </button>
+            </div>
+          </section>
+        </section>
+        <section class="TB-left topic-wrap CC-wrap">
+          <div class="topic-wrap CC-wrap">
+            <blockquote class="TB-quote">
+              <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about
+              color contrast<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
+                class="TB-quote-cite"><em>Citation</em></cite>
+            </blockquote>
+          </div>
+        </section>
+      </section>
     </div>
-    <section id="CC" class="topic color-contrast">
-      <div class="topic-container color-contrast-container">
-        <section class="TT CC-top">
-          <div class="section-divider"></div>
-          <div class="topic-wrap CC-top-wrapper">
-            <section class="TT-header CC-header">
-              <h2 class="TT-heading CC-heading topic-wrap CC-wrap"><div class="topic-wrap CC-wrap">color contrast</div></h2>
-              <p class="team-name CC-team-name topic-wrap CC-wrap">DMD 300 Group 3</p>
-            </section>
+  </section>
+  <section class="section-change color-information-change">
+    <div class="wrapper section-change-wrapper">color & info&nbsp;&nbsp;&nbsp;&nbsp;color &
+      info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info</div>
+  </section>
+  <section id="CI" class="topic color-information">
+    <div class="topic-container color-information-container">
+      <section class="TT CI-top">
+        <div class="section-divider"></div>
+        <div class="topic-wrap CI-wrap CI-top-wrapper">
+          <section class="TT-header CI-header">
+            <h2 class="TT-heading CI-heading topic-wrap CI-wrap">
+              <div class="topic-wrap CI-wrap">information and color</div>
+            </h2>
+            <p class="team-name CI-team-name topic-wrap CI-wrap">DMD 300 Group 3</p>
+          </section>
+        </div>
+      </section>
+      <section class="TM CI-middle">
+        <section class="TM-right CI-middle-right">
+          <h3 class="TM-h3 CI-h3 topic-wrap CI-wrap">This will be a short introduction to communication information with
+            color</h3>
+        </section>
+        <section class="TM-left CI-middle-left">
+          <div class="TM-pagination-wrapper">
+            <div class="topic-pagination CI-pagination">4</div>
           </div>
         </section>
-        <section class="TM CC-middle">
-          <section class="TM-right CC-middle-right">
-            <h3 class="TM-h3 CC-h3 topic-wrap CC-wrap">This will be a short introduction to color contrast</h3>
-          </section>
-          <section class="TM-left CC-middle-left">
-            <div class="TM-pagination-wrapper">
-              <div class="topic-pagination CC-pagination">3</div>
+      </section>
+      <section class="TB CI-bottom topic-wrap CI-wrap">
+        <section class="TB-right topic-wrap CI-wrap">
+          <p class="TBR-left TB-date">Sept. 2023</p>
+          <section class="TBR-right topic-wrap CI-wrap">
+            <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</p>
+            <div class="example-button-wrap topic-wrap CI-wrap">
+              <button id="CI-example" class="TBR-button example-button animated-hover" type="button"
+                onClick=exampleRequest(this)>
+                <span class="example-button-text">interactive example
+                  <span class="example-button-text-hover">interactive example</span>
+                </span>
+                <div class="example-button-hover"></div>
+              </button>
             </div>
           </section>
         </section>
-        <section class="TB CC-bottom topic-wrap CC-wrap">
-            <section class="TB-right topic-wrap CC-wrap">
-              <p class="TBR-left TB-date">Sept. 2023</p>
-              <section class="TBR-right topic-wrap CC-wrap">
-                <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="example-button-wrap topic-wrap CC-wrap">
-                <button id="CC-example" class="TBR-button example-button animated-button" type="button" onClick=exampleRequest(this)>
-                  <span class="example-button-text">interactive example
-                    <span class="example-button-text-hover">interactive example</span>
-                  </span>
-                  <div class="example-button-hover"></div>
-                </button>
-              </div>
-              </section>
-            </section>
-            <section class="TB-left topic-wrap CC-wrap">
-              <div class="topic-wrap CC-wrap">
-                <blockquote class="TB-quote">
-                  <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about color contrast<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite class="TB-quote-cite"><em>Citation</em></cite>
-                </blockquote>
-              </div>
-            </section>
-          </section>
-      </div>
-    </section>
-    <section class="section-change color-information-change">
-      <div class="wrapper section-change-wrapper">color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info</div>
-    </section>
-    <section id="CI" class="topic color-information">
-      <div class="topic-container color-information-container">
-        <section class="TT CI-top">
-          <div class="section-divider"></div>
-          <div class="topic-wrap CI-wrap CI-top-wrapper">
-            <section class="TT-header CI-header">
-              <h2 class="TT-heading CI-heading topic-wrap CI-wrap"><div class="topic-wrap CI-wrap">information and color</div></h2>
-              <p class="team-name CI-team-name topic-wrap CI-wrap">DMD 300 Group 3</p>
-            </section>
+        <section class="TB-left topic-wrap CI-wrap">
+          <div class="topic-wrap CI-wrap">
+            <blockquote class="TB-quote">
+              <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about
+              color perception disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
+                class="TB-quote-cite"><em>Citation</em></cite>
+            </blockquote>
           </div>
         </section>
-        <section class="TM CI-middle">
-          <section class="TM-right CI-middle-right">
-            <h3 class="TM-h3 CI-h3 topic-wrap CI-wrap">This will be a short introduction to communication information with color</h3>
-          </section>
-          <section class="TM-left CI-middle-left">
-            <div class="TM-pagination-wrapper">
-              <div class="topic-pagination CI-pagination">4</div>
-            </div>
-          </section>
-        </section>
-        <section class="TB CI-bottom topic-wrap CI-wrap">
-            <section class="TB-right topic-wrap CI-wrap">
-              <p class="TBR-left TB-date">Sept. 2023</p>
-              <section class="TBR-right topic-wrap CI-wrap">
-                <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="example-button-wrap topic-wrap CI-wrap">
-                <button id="CI-example" class="TBR-button example-button animated-button" type="button" onClick=exampleRequest(this)>
-                  <span class="example-button-text">interactive example
-                    <span class="example-button-text-hover">interactive example</span>
-                  </span>
-                  <div class="example-button-hover"></div>
-                </button>
-              </div>
-              </section>
-            </section>
-            <section class="TB-left topic-wrap CI-wrap">
-              <div class="topic-wrap CI-wrap">
-                <blockquote class="TB-quote">
-                  <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about color perception disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite class="TB-quote-cite"><em>Citation</em></cite>
-                </blockquote>
-              </div>
-            </section>
-          </section>
-      </div>
-    </section>
-    <div class="section-change color-disability-change">
-      <div class="wrapper section-change-wrapper">color disability&nbsp;&nbsp;&nbsp;&nbsp;color disability&nbsp;&nbsp;&nbsp;&nbsp;color disability&nbsp;&nbsp;&nbsp;&nbsp;color disability</div>
+      </section>
     </div>
-    <section id="DE" class="topic disability-examples">
-      <div class="topic-container disability-examples-container">
-        <section class="TT DE-top">
-          <div class="section-divider"></div>
-          <div class="topic-wrap DE-wrap DE-top-wrapper">
-            <section class="TT-header DE-header">
-              <h2 class="TT-heading DE-heading topic-wrap DE-wrap"><div class="topic-wrap DE-wrap">color disabilities</div></h2>
-              <p class="team-name DE-team-name topic-wrap DE-wrap">DMD 300 Group 3</p>
-            </section>
+  </section>
+  <div class="section-change color-disability-change">
+    <div class="wrapper section-change-wrapper">visual concerns&nbsp;&nbsp;&nbsp;&nbsp;visual
+      concerns&nbsp;&nbsp;&nbsp;&nbsp;visual concerns&nbsp;&nbsp;&nbsp;&nbsp;visual concerns</div>
+  </div>
+  <section id="DE" class="topic disability-examples">
+    <div class="topic-container disability-examples-container">
+      <section class="TT DE-top">
+        <div class="section-divider"></div>
+        <div class="topic-wrap DE-wrap DE-top-wrapper">
+          <section class="TT-header DE-header">
+            <h2 class="TT-heading DE-heading topic-wrap DE-wrap">
+              <div class="topic-wrap DE-wrap">visual concerns</div>
+            </h2>
+            <p class="team-name DE-team-name topic-wrap DE-wrap">DMD 300 Group 3</p>
+          </section>
+        </div>
+      </section>
+      <section class="TM DE-middle">
+        <section class="TM-right DE-middle-right">
+          <h3 class="TM-h3 DE-h3 topic-wrap DE-wrap">Visual concerns related to color</h3>
+        </section>
+        <section class="TM-left DE-middle-left">
+          <div class="TM-pagination-wrapper">
+            <div class="topic-pagination DE-pagination">5</div>
           </div>
         </section>
-        <section class="TM DE-middle">
-          <section class="TM-right DE-middle-right">
-            <h3 class="TM-h3 DE-h3 topic-wrap DE-wrap">This will be a short introduction to diabilities that affect color perception.</h3>
-          </section>
-          <section class="TM-left DE-middle-left">
-            <div class="TM-pagination-wrapper">
-              <div class="topic-pagination DE-pagination">5</div>
+      </section>
+      <section class="TB DE-bottom topic-wrap DE-wrap">
+        <section class="TB-right topic-wrap DE-wrap">
+          <p class="TBR-left TB-date">Sept. 2023</p>
+          <section class="TBR-right topic-wrap DE-wrap">
+            <div class="TBR-content">
+              <p>We live in a world surrounded by such vibrant and treasurable things that we may sometimes neglect to
+                take advantage of. What if the way you saw the world wasn't the exact way others saw it because of a
+                color-based impairment or disability? Amblyopia, Cataract, Glaucoma, topic nerve atrophy and more are a
+                few examples of visual concerns that can be aided with web accessibility. A more extensive list can be
+                found on <a class="animated-link underlined" href="www.stroggo.com" target="_blank">Stroggo.com</a>.</p>&nbsp;
+              <p>One color-based impairment is color blindness, with red/green being the most popular type. Color
+                blindness (or monochromacy) occurs when the anatomy of someone's eyes don't allow them to see the world
+                as normal eyes do. There are three common types: red-green, blue-yellow and complete color blindness
+                (Lera, par. 4, 2021). To aid in an impairment or disability like this, web developers would have to not
+                only consider color choice but also the functionality needed for screen readers to understand the
+                information accurately to colorblind users. Color blindness isn't as rare as people may assume, “there
+                are an estimate of “approximately 300 million people across the globe” impacted by this eye condition.
+                What causes this condition is due to the “three types of cone cells that are able to discern different
+                colors and shades” (Lera, par. 2, 2021).</p>&nbsp;
+              <p>A few important accessibility topics to keep in mind from the Web Content Accessibility Guidelines
+                (WCAG) include: “Contrast (Minimum)”, “Use of Color” and “Non-Text Content” (What Is Color Blindness
+                Accessibility?, pars. 8-12, 2022). To assist color blind users as a web developer, it's important to:
+                avoid using red and green for status color or interactive elements, to emphasize ratio of a color
+                contrast ratio of at least 4.5:1 (Web accessibility guidelines v1.0 foundations - overview, par. 1,
+                2023). For our website we know that color contrast is an important topic and there are a few resources
+                to use to help us with this: Stark, Adobe Color, and Contrast (Levanier, par. 26, 2021).</p>&nbsp;
+              <p>Another colorblind friendly idea for the development on our website will be to use textures in
+                conjunction with color to remove the uncertainty of color concerns.</p>&nbsp;
+            </div>
+            <div class="example-button-wrap topic-wrap DE-wrap">
+              <button id="DE-example" class="TBR-button example-button animated-hover" type="button"
+                onClick=exampleRequest(this)>
+                <span class="example-button-text">interactive example
+                  <span class="example-button-text-hover">interactive example</span>
+                </span>
+                <div class="example-button-hover"></div>
+              </button>
             </div>
           </section>
         </section>
-        <section class="TB DE-bottom topic-wrap DE-wrap">
-            <section class="TB-right topic-wrap DE-wrap">
-              <p class="TBR-left TB-date">Sept. 2023</p>
-              <section class="TBR-right topic-wrap DE-wrap">
-                <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <div class="example-button-wrap topic-wrap DE-wrap">
-                <button id="DE-example" class="TBR-button example-button animated-button" type="button" onClick=exampleRequest(this)>
-                  <span class="example-button-text">interactive example
-                    <span class="example-button-text-hover">interactive example</span>
-                  </span>
-                  <div class="example-button-hover"></div>
-                </button>
-              </div>
-              </section>
-            </section>
-            <section class="TB-left topic-wrap DE-wrap">
-              <div class="topic-wrap DE-wrap">
-                <blockquote class="TB-quote">
-                  <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about color disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite class="TB-quote-cite"><em>Citation</em></cite>
-                </blockquote>
-              </div>
-            </section>
-          </section>
-      </div>
-    </section>
-    <footer>
-      <div class="section-divider"></div>
-      <span class="temporary-text">Footer area</span>
-    </footer>
-  </body>
-  <script src="./JavaScript.js"></script>
+        <section class="TB-left topic-wrap DE-wrap">
+          <div class="topic-wrap DE-wrap">
+            <blockquote class="TB-quote">
+              <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about
+              color disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
+                class="TB-quote-cite"><em>Citation</em></cite>
+            </blockquote>
+          </div>
+        </section>
+      </section>
+    </div>
+  </section>
+  <footer>
+    <div class="section-divider"></div>
+    <span class="temporary-text">Footer area</span>
+  </footer>
+</body>
+<script src="./JavaScript.js"></script>
+
 </html>
