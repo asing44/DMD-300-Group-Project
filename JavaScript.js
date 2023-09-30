@@ -7,7 +7,6 @@ gsap.config({
     trialWarn: false
 });
 
-console.clear();
 
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
@@ -44,81 +43,103 @@ gsap.to(heroArrow, {
 
 // -------------------- TOPIC SECTIONS -------------------- //
 
-let colorContrastContent = gsap.utils.toArray(".CC-wrap");
+let introductionContent = gsap.utils.toArray(".intro-animated");
+
+let icTl = gsap.timeline({
+    delay: 0.2,
+    stagger: 0.1,
+    defaults: {
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: ".introduction",
+    },
+    invalidateOnRefresh: true,
+    ease: "ease.inOut"
+});
+
+introductionContent.forEach((item, index) => {
+    icTl.fromTo(item, {
+        yPercent: -20,
+        opacity: 0
+    }, {
+        yPercent: 0,
+        opacity: 1
+    })
+});
+
+let colorContrastContent = gsap.utils.toArray(".CC-animated");
+
+let ccTl = gsap.timeline({
+    delay: 0.2,
+    stagger: 0.1,
+    defaults: {
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: ".color-contrast",
+    },
+    invalidateOnRefresh: true,
+    ease: "ease.inOut"
+});
 
 colorContrastContent.forEach((item, index) => {
-    let tl = gsap.timeline({
-        delay: 0.1,
-        stagger: 0.1,
-        defaults: {
-            duration: 1.5,
-            ease: "power3.inOut"
-        },
-        scrollTrigger: {
-            trigger: ".color-contrast-container",
-            once: true,
-            start: "top top",
-            end: "10% top"
-        },
-        ease: "power3.inOut"
-    });
-    gsap.set(item, {
-        y: -550
-    })
-    tl.to(item, {
-        y: 0,
+    ccTl.fromTo(item, {
+        yPercent: -20,
+        opacity: 0
+    }, {
+        yPercent: 0,
+        opacity: 1
     })
 });
 
-let colorInformationContent = gsap.utils.toArray(".CI-wrap");
+let colorInformationContent = gsap.utils.toArray(".CI-animated");
+
+let ciTl = gsap.timeline({
+    delay: 0.2,
+    stagger: 0.1,
+    defaults: {
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: ".color-information",
+    },
+    invalidateOnRefresh: true,
+    ease: "ease.inOut"
+});
 
 colorInformationContent.forEach((item, index) => {
-    let tl = gsap.timeline({
-        delay: 0.1,
-        stagger: 0.1,
-        defaults: {
-            duration: 1.5,
-            ease: "power3.inOutt"
-        },
-        scrollTrigger: {
-            trigger: ".color-information-container",
-            once: true,
-            start: "top top",
-            end: "10% top"
-        },
-        ease: "power3.inOut"
-    });
-    gsap.set(item, {
-        y: -700
-    })
-    tl.to(item, {
-        y: 0,
+    ciTl.fromTo(item, {
+        yPercent: -20,
+        opacity: 0
+    }, {
+        yPercent: 0,
+        opacity: 1
     })
 });
 
-let disabilityExamplesContent = gsap.utils.toArray(".DE-wrap");
+let disabilityExamplesContent = gsap.utils.toArray(".DE-animated");
+
+let deTl = gsap.timeline({
+    delay: 0.2,
+    stagger: 0.1,
+    defaults: {
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: ".disability-examples",
+    },
+    invalidateOnRefresh: true,
+    ease: "ease.inOut"
+});
 
 disabilityExamplesContent.forEach((item, index) => {
-    let tl = gsap.timeline({
-        delay: 0.1,
-        stagger: 0.1,
-        defaults: {
-            duration: 1.5,
-            ease: "power3.out"
-        },
-        scrollTrigger: {
-            trigger: ".disability-examples-container",
-            once: true,
-            start: "top top",
-            end: "10% top"
-        },
-        ease: "power3.inOut"
-    });
-    gsap.set(item, {
-        yPercent: -100
-    })
-    tl.to(item, {
+    deTl.fromTo(item, {
+        yPercent: -20,
+        opacity: 0
+    }, {
         yPercent: 0,
+        opacity: 1
     })
 });
 
