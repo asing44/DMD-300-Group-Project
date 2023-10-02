@@ -7,7 +7,6 @@ gsap.config({
     trialWarn: false
 });
 
-
 var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
 console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
@@ -205,7 +204,7 @@ sectionChanges.forEach((item) => {
             xPercent: -50
         });
         tl.to(item, {
-            x: 500,
+            xPercent: 10,
             scrollTrigger: {
                 trigger: sectionWrapper,
                 scrub: 1.2,
@@ -215,8 +214,11 @@ sectionChanges.forEach((item) => {
     } else {
         let tl = gsap.timeline({
         });
+        gsap.set(item, {
+            xPercent: 10
+        });
         tl.to(item, {
-            x: -500,
+            xPercent: -50,
             scrollTrigger: {
                 trigger: sectionWrapper,
                 scrub: 1.2,
