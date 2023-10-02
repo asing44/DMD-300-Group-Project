@@ -532,6 +532,51 @@ li {
     -webkit-backdrop-filter: blur(var(--scale-1));
 }
 
+/* Interactive example button */
+
+.example-button-container {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    bottom: var(--scale1);
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.example-button-wrap {
+    height: min-content;
+    width: min-content;
+    overflow: hidden;
+}
+
+.example-button-text {
+    position: relative;
+    display: inline-block;
+    color: var(--white);
+    overflow: clip;
+    z-index: 2;
+}
+
+.example-button-text-hover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: var(--main)
+}
+
+.example-button-hover {
+    position: absolute;
+    height: 100%;
+    width: 101%;
+    top: 0;
+    left: -101%;
+    padding: inherit;
+    background-color: var(--white);
+    z-index: -1;
+}
+
 /* TOPIC TOP */
 
 .TT {
@@ -644,6 +689,7 @@ li {
 }
 
 .TB-left {
+    height: 100%;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -658,13 +704,6 @@ li {
 
 .TBR-content {
     margin-top: 0;
-}
-
-.example-button-wrap {
-    height: min-content;
-    width: min-content;
-    margin-top: var(--scale0);
-    overflow: hidden;
 }
 
 .TBR-button, .example-button {
@@ -683,32 +722,6 @@ li {
     cursor: pointer;
     overflow: clip;
     z-index: 1;
-}
-
-.example-button-text {
-    position: relative;
-    display: inline-block;
-    color: var(--white);
-    overflow: clip;
-    z-index: 2;
-}
-
-.example-button-text-hover {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    color: var(--main)
-}
-
-.example-button-hover {
-    position: absolute;
-    height: 100%;
-    width: 101%;
-    top: 0;
-    left: -101%;
-    padding: inherit;
-    background-color: var(--white);
-    z-index: -1;
 }
 
 .TBR-left {

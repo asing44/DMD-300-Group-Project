@@ -4,6 +4,7 @@
  - Accessibility button
     - Low-contrast mode
     - Theme mode
+    - Floating interactive button at bottom of each section
  -->
 <html>
 
@@ -32,10 +33,15 @@
 </head>
 
 <body>
-  <!-- Start scroll at top -->
+  <!-- Start scroll at top script -->
   <script>
     $(window).scrollTop(0)
   </script>
+  <!-- 
+  --------------------
+  STICKY ELEMENTS
+  --------------------
+   -->
   <div class="grainy-gradient-wrapper">
     <div id="grainy-gradient"></div>
   </div>
@@ -43,7 +49,7 @@
     <button type="button" class="back-to-top" role="Go back to the top of the page."><i
         class="fa-solid fa-angle-up"></i></button>
   </div>
-  <div class="interactive-content-container " data-container = "interactive-content-container">
+  <div class="interactive-content-container " data-container="interactive-content-container">
     <section class="interactive-content">
       <div id="CC-example" class="codepen-example codepen-inactive">
         <p class="codepen" data-height="550" data-default-tab="result" data-slug-hash="qBLXOOz" data-user="asing44"
@@ -77,7 +83,8 @@
       </div>
     </section>
     <div class="example-button-close-wrap">
-      <button class="example-button-close animated-button" data-container = "interactive-content-container" onClick=exampleClose()>
+      <button class="example-button-close animated-button" data-container="interactive-content-container"
+        onClick=exampleClose()>
         <span class="example-close-text">close
           <span class="example-close-text-hover">close</span>
         </span>
@@ -85,6 +92,22 @@
       </button>
     </div>
   </div>
+  <div class="example-button-container">
+    <div id="interactive-content-button" class="example-button-wrap">
+      <button id="CC-example" class="TBR-button example-button animated-button pin-button" type="button"
+        onClick=exampleRequest(this)>
+        <span class="example-button-text">interactive example
+          <span class="example-button-text-hover">interactive example</span>
+        </span>
+        <div class="example-button-hover"></div>
+      </button>
+    </div>
+  </div>
+  <!-- 
+  --------------------
+  HERO
+  --------------------
+  -->
   <section class="hero">
     <div class="wrapper hero-h1-wrapper">
       <h1 class="hero-h1">color accessibility for the web</h1>
@@ -93,6 +116,11 @@
       <i class="fa-solid fa-angle-down"></i>
     </div>
   </section>
+  <!-- 
+    --------------------
+    INTRODUCTION
+    --------------------
+    -->
   <div class="section-change-container introduction-change">
     <div class="wrapper section-change-wrapper">
       introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction&nbsp;&nbsp;&nbsp;&nbsp;introduction
@@ -105,11 +133,16 @@
     </div>
     <section class="wrap intro-top intro-animated">
       <div class="wrap intro-quote">
-        <blockquote class="intro-stat stat-1"><span class="quote-marks">"</span><span class="highlight">96.8%</span> of homepages had detectable <span class="highlight">WCAG 2 failures</span>.<span class="quote-marks">"</span></blockquote>&nbsp;
+        <blockquote class="intro-stat stat-1"><span class="quote-marks">"</span><span class="highlight">96.8%</span> of
+          homepages had detectable <span class="highlight">WCAG 2 failures</span>.<span class="quote-marks">"</span>
+        </blockquote>&nbsp;
         <span>- <cite>citation</cite></span>
       </div>
       <div class="wrap intro-quote">
-        <blockquote class="intro-stat stat-2"><span class="quote-marks">"</span><span class="highlight">4.9%</span> of U.S. adults have a <span class="highlight">vision disability</span> with blindness or serious difficulty seeing even when wearing glasses, requiring screen readers.<span class="quote-marks">"</span></blockquote>&nbsp;
+        <blockquote class="intro-stat stat-2"><span class="quote-marks">"</span><span class="highlight">4.9%</span> of
+          U.S. adults have a <span class="highlight">vision disability</span> with blindness or serious difficulty
+          seeing even when wearing glasses, requiring screen readers.<span class="quote-marks">"</span></blockquote>
+        &nbsp;
         <span>- <cite>citation</cite></span>
       </div>
     </section>
@@ -117,25 +150,33 @@
       <div class="wrap intro-content-wrap intro-animated">
         <h4 class="intro-content-header">Introduction</h4>
         <p class="intro-content">
-          <p>Think about the internet as a big colorful playground. It's exciting, but not everyone sees the same colors or plays the same way. That's why making websites is a bit like being an artist and a scientist. Welcome to our journey into web design, where we focus on <span class="highlight">three important things</span>:</p>&nbsp;
+        <p>Think about the internet as a big colorful playground. It's exciting, but not everyone sees the same colors
+          or plays the same way. That's why making websites is a bit like being an artist and a scientist. Welcome to
+          our journey into web design, where we focus on <span class="highlight">three important things</span>:</p>
+        &nbsp;
         </p>
       </div>
       <div class="wrap">
         <aside class="intro-asid intro-animated">
-            <ul class="aside-links-list">
-              <li class="underlined"><a class="aside-link" href="#CC">Color contrast</a></li>
-              <li class="underlined"><a class="aside-link" href="#CI">Communicating with color</a></li>
-              <li class="underlined"><a class="aside-link" href="#DE">Color disabilities</a></li>
-            </ul>
+          <ul class="aside-links-list">
+            <li class="underlined"><a class="aside-link" href="#CC">Color contrast</a></li>
+            <li class="underlined"><a class="aside-link" href="#CI">Communicating with color</a></li>
+            <li class="underlined"><a class="aside-link" href="#DE">Color disabilities</a></li>
+          </ul>
         </aside>
       </div>
     </section>
   </section>
+  <!-- 
+    --------------------
+    COLOR CONTRAST SECTION
+    --------------------
+    -->
   <div class="section-change color-contrast-change">
     <div class="wrapper section-change-wrapper reverse">color contrast&nbsp;&nbsp;&nbsp;&nbsp;color
       contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast</div>
   </div>
-  <section id="CC" class="topic color-contrast animated-button-container pin-container" data-pinContainer="CC">
+  <section id="CC" class="topic color-contrast animated-button-container pin-container">
     <div class="topic-container color-contrast-container">
       <section class="TT CC-top">
         <div class="section-divider"></div>
@@ -148,7 +189,7 @@
       </section>
       <section class="TM CC-middle CC-animated">
         <section class="TM-right CC-middle-right">
-          <h3 class="TM-h3 CC-h3">This will be a short introduction to color contrast</h3>
+          <h3 class="TM-h3 CC-h3">Accessible color contrast is vital for user experience</h3>
         </section>
         <section class="TM-left CC-middle-left">
           <div class="TM-pagination-wrapper">
@@ -160,11 +201,14 @@
         <section class="TB-right">
           <p class="TBR-left TB-date">Sept. 2023</p>
           <section class="TBR-right">
-            <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum.</p>
+            <p class="TBR-content">Color contrast is an interesting topic to cover as it is important to artists,
+              designers or web accessibility developers. These professionals understand and utilize colors together to
+              create appropriate contrasts or differences enough to create an appropriate end result. [possible sidenote
+              on color theory (primary, complimentary colors, etc.)]&nbsp;
+              This topic is important for web accessibility as it truly makes or breaks a user's ability to understand
+              information. Certain visual concerns, discussed later in this page, may have difficulty viewing a page
+              with little or no color contrast effort for visual disabilities or impairments.
+            </p>
           </section>
         </section>
         <section class="TB-left">
@@ -173,24 +217,20 @@
             color contrast<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
               class="TB-quote-cite"><em>Citation</em></cite>
           </blockquote>
-          <div class="example-button-wrap  CC-animated">
-            <button id="CC-example" class="TBR-button example-button animated-button pin-button" data-pinButton="CC" type="button"
-              onClick=exampleRequest(this)>
-              <span class="example-button-text">interactive example
-                <span class="example-button-text-hover">interactive example</span>
-              </span>
-              <div class="example-button-hover"></div>
-            </button>
-          </div>
         </section>
       </section>
     </div>
   </section>
+  <!-- 
+    --------------------
+    COLOR INFORMATION SECTION
+    --------------------
+    -->
   <section class="section-change color-information-change">
     <div class="wrapper section-change-wrapper">color & info&nbsp;&nbsp;&nbsp;&nbsp;color &
       info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info</div>
   </section>
-  <section id="CI" class="topic color-information  animated-button-container pin-container" data-pinContainer="CI">
+  <section id="CI" class="topic color-information  animated-button-container pin-container">
     <div class="topic-container color-information-container">
       <section class="TT CI-top CI-animated">
         <div class="section-divider"></div>
@@ -203,8 +243,7 @@
       </section>
       <section class="TM CI-middle CI-animated">
         <section class="TM-right CI-middle-right">
-          <h3 class="TM-h3 CI-h3">This will be a short introduction to communication information with
-            color</h3>
+          <h3 class="TM-h3 CI-h3">Processing color is not the same for all users</h3>
         </section>
         <section class="TM-left CI-middle-left">
           <div class="TM-pagination-wrapper">
@@ -216,11 +255,10 @@
         <section class="TB-right">
           <p class="TBR-left TB-date">Sept. 2023</p>
           <section class="TBR-right">
-            <p class="TBR-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-              esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-              qui officia deserunt mollit anim id est laborum.</p>
+            <p class="TBR-content">Color is vital to information processing whether we realize it or not. The colors we
+              see can encourage us to think or feel certain things and it can alter how we process information
+              pertaining to certain colors. But what if you had a visual impairment that altered your color perception
+              and information processing?</p>
           </section>
         </section>
         <section class="TB-left">
@@ -229,24 +267,20 @@
             color perception disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
               class="TB-quote-cite"><em>Citation</em></cite>
           </blockquote>
-          <div class="example-button-wrap">
-            <button id="CI-example" class="TBR-button example-button animated-button pin-button" data-pinButton="CI" type="button"
-              onClick=exampleRequest(this)>
-              <span class="example-button-text">interactive example
-                <span class="example-button-text-hover">interactive example</span>
-              </span>
-              <div class="example-button-hover"></div>
-            </button>
-          </div>
         </section>
       </section>
     </div>
   </section>
+  <!-- 
+    --------------------
+    COLOR DISABILITY SECTION
+    --------------------
+    -->
   <div class="section-change color-disability-change">
     <div class="wrapper section-change-wrapper">visual concerns&nbsp;&nbsp;&nbsp;&nbsp;visual
       concerns&nbsp;&nbsp;&nbsp;&nbsp;visual concerns&nbsp;&nbsp;&nbsp;&nbsp;visual concerns</div>
   </div>
-  <section id="DE" class="topic disability-examples  animated-button-container pin-container" data-pinContainer="DE">
+  <section id="DE" class="topic disability-examples  animated-button-container pin-container">
     <div class="topic-container disability-examples-container">
       <section class="TT DE-top DE-animated">
         <div class="section-divider"></div>
@@ -276,7 +310,8 @@
                 take advantage of. What if the way you saw the world wasn't the exact way others saw it because of a
                 color-based impairment or disability? Amblyopia, Cataract, Glaucoma, topic nerve atrophy and more are a
                 few examples of visual concerns that can be aided with web accessibility. A more extensive list can be
-                found on <a class="animated-link underlined" href="www.stroggo.com" target="_blank">Stroggo.com</a>.</p>&nbsp;
+                found on <a class="animated-link underlined" href="www.stroggo.com" target="_blank">Stroggo.com</a>.</p>
+              &nbsp;
               <p>One color-based impairment is color blindness, with red/green being the most popular type. Color
                 blindness (or monochromacy) occurs when the anatomy of someone's eyes don't allow them to see the world
                 as normal eyes do. There are three common types: red-green, blue-yellow and complete color blindness
@@ -304,24 +339,22 @@
             color disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
               class="TB-quote-cite"><em>Citation</em></cite>
           </blockquote>
-          <div class="example-button-wrap ">
-            <button id="DE-example" class="TBR-button example-button animated-button pin-button" data-pinButton="DE" type="button"
-              onClick=exampleRequest(this)>
-              <span class="example-button-text">interactive example
-                <span class="example-button-text-hover">interactive example</span>
-              </span>
-              <div class="example-button-hover"></div>
-            </button>
-          </div>
         </section>
       </section>
     </div>
   </section>
+  <!-- 
+    --------------------
+    FOOTER
+    --------------------
+    -->
+
   <footer>
     <div class="section-divider"></div>
-    
+
   </footer>
 </body>
+<!-- Include JavaScript -->
 <script src="./JavaScript.js"></script>
 
 </html>

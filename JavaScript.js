@@ -24,11 +24,10 @@ function getScroll() {
     }
 }
 
-
-
 window.addEventListener("resize", () => {
     viewportHeight = window.innerHeight;
     viewportWidth = window.innerWidth;
+    ScrollTrigger.refresh();
 })
 
 // -------------------- HERO -------------------- //
@@ -164,8 +163,6 @@ disabilityExamplesContent.forEach((item, index) => {
 // -------------------- BUTTONS -------------------- //
 
 let animatedButtons = gsap.utils.toArray(".animated-button");
-let pinnedButtons = gsap.utils.toArray(".pin-button");
-let pinSections = gsap.utils.toArray(".pin-container");
 
 animatedButtons.forEach((item, index) => {
 
@@ -190,22 +187,6 @@ animatedButtons.forEach((item, index) => {
 
     item.addEventListener("mouseout", function() {
         hoverTl.reverse();
-    });
-});
-
-pinnedButtons.forEach(item => {
-
-    let pinSection = pinSections.filter(section => {
-        return section.dataset.pincontainer == item.dataset.pinbutton
-    });
-
-    ScrollTrigger.create({
-        trigger: pinSection,
-        pin: item,
-        start: "+=10% top",
-        end: "bottom bottom",
-        pinReparent: true,
-        markers: true
     });
 });
 
@@ -252,10 +233,23 @@ sectionChanges.forEach((item) => {
 const codePenContent = document.getElementsByClassName("codepen-example");
 
 let interactiveExample = gsap.timeline({
-    delay: 1,
+    delay: 0.5,
     paused: true
 })
-.add(showModal());
+.add(showModal())
+.add(hideButton(), "<");
+
+function hideButton() {
+    let tl = gsap.timeline();
+    tl.to("#interactive-content-button", {
+        duration: 0.5,
+        opacity: 0,
+        ease: "ease.inOut"
+    }).set("#interactive-content-button", {
+        display: "none"
+    });
+    return tl;
+}
 
 function showModal() {
     let tl = gsap.timeline();
@@ -263,7 +257,7 @@ function showModal() {
         duration: 1,
         yPercent: -100,
         opacity: "100%",
-        ease: "power2.inOut"
+        ease: "ease.inOut"
     })
     return tl;
 }
@@ -285,6 +279,33 @@ function exampleRequest(btn) {
 function exampleClose() {
     interactiveExample.reverse()
 }
+
+// -------------------- INTERACTIVE EXAMPLES BUTTONS -------------------- //
+
+const interactiveButton = document.getElementById("interactive-content-button");
+
+// Color contrast example
+
+let ccInteractive = gsap.timeline({
+    defaults: {
+        duration: 0.5,
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: "#CC",
+        start: "top top",
+        end: "bottom center",
+        toggleActions: "play reverse play reverse",
+        markers: true
+    }
+});
+
+ccInteractive.fromTo(interactiveButton, {
+    opacity: 0
+}, {
+    opacity: 1
+})
+
 
 // -------------------- BACK TO TOP -------------------- //
 
