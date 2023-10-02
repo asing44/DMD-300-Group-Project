@@ -647,6 +647,10 @@ li {
     overflow: clip;
 }
 
+.TB-left {
+    position: relative
+}
+
 .TBR-right {
     padding: 0 0 0 var(--scale-3);
     grid-area: 1 / 2;
@@ -657,7 +661,9 @@ li {
 }
 
 .example-button-wrap {
-    position: relative;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
     height: min-content;
     width: min-content;
     margin-top: var(--scale0);
@@ -668,6 +674,8 @@ li {
     position: relative;
     height: 100%;
     width: 100%;
+    bottom: 0;
+    left: 0;
     padding: var(--scale-1) var(--scale1);
     border-radius: 1rem;
     background-color: var(--main);

@@ -149,30 +149,45 @@ disabilityExamplesContent.forEach((item, index) => {
 
 // -------------------- BUTTONS -------------------- //
 
-let animatedElement = gsap.utils.toArray(".animated-hover");
+let animatedButton = gsap.utils.toArray(".animated-button");
+let buttonContainer = gsap.utils.toArray(".animated-button-container")
 
-animatedElement.forEach((item, index) => {
-    let elementTextHover = item.children[0].children[0];
-    let elementHover = item.children[1]
+animatedButton.forEach((item, index) => {
+
+    console.log(buttonContainer[index], item)
+
+    let elementText = item.children[0].children[0];
+    let element = item.children[1]
     
-    let tl = gsap.timeline({
+    let hoverTl = gsap.timeline({
         paused: true,
         defaults: {
             duration: 0.25,
             ease: "power2.inOut"
         }
-    }).to(elementHover, {
+    }).to(element, {
         xPercent: 100
-    }).to(elementTextHover, {
+    }).to(elementText, {
         yPercent: -100
     }, "<50%")
     
     item.addEventListener("mouseover", function() {
-        tl.play();
+        hoverTl.play();
     });
 
     item.addEventListener("mouseout", function() {
-        tl.reverse();
+        hoverTl.reverse();
+    });
+
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: buttonContainer[index],
+            markers: true,
+            pin: item,
+            scrub: true,
+            pinSpacing: false,
+            start: "+=20% top",
+        }
     });
 })
 

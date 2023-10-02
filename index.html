@@ -43,7 +43,7 @@
     <button type="button" class="back-to-top" role="Go back to the top of the page."><i
         class="fa-solid fa-angle-up"></i></button>
   </div>
-  <div class="interactive-content-container">
+  <div class="interactive-content-container " data-container = "interactive-content-container">
     <section class="interactive-content">
       <div id="CC-example" class="codepen-example codepen-inactive">
         <p class="codepen" data-height="550" data-default-tab="result" data-slug-hash="qBLXOOz" data-user="asing44"
@@ -77,7 +77,7 @@
       </div>
     </section>
     <div class="example-button-close-wrap">
-      <button class="example-button-close animated-hover" onClick=exampleClose()>
+      <button class="example-button-close animated-button" data-container = "interactive-content-container" onClick=exampleClose()>
         <span class="example-close-text">close
           <span class="example-close-text-hover">close</span>
         </span>
@@ -135,7 +135,7 @@
     <div class="wrapper section-change-wrapper reverse">color contrast&nbsp;&nbsp;&nbsp;&nbsp;color
       contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast&nbsp;&nbsp;&nbsp;&nbsp;color contrast</div>
   </div>
-  <section id="CC" class="topic color-contrast">
+  <section id="CC" class="topic color-contrast animated-button-container">
     <div class="topic-container color-contrast-container">
       <section class="TT CC-top">
         <div class="section-divider"></div>
@@ -165,15 +165,6 @@
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
               esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
               qui officia deserunt mollit anim id est laborum.</p>
-            <div class="example-button-wrap  CC-animated">
-              <button id="CC-example" class="TBR-button example-button animated-hover" type="button"
-                onClick=exampleRequest(this)>
-                <span class="example-button-text">interactive example
-                  <span class="example-button-text-hover">interactive example</span>
-                </span>
-                <div class="example-button-hover"></div>
-              </button>
-            </div>
           </section>
         </section>
         <section class="TB-left">
@@ -185,6 +176,15 @@
             </blockquote>
           </div>
         </section>
+        <div class="example-button-wrap animated-button">
+          <button id="CC-example" class="TBR-button example-button" data-container="color-contrast" type="button"
+            onClick=exampleRequest(this)>
+            <span class="example-button-text">interactive example
+              <span class="example-button-text-hover">interactive example</span>
+            </span>
+            <div class="example-button-hover"></div>
+          </button>
+        </div>
       </section>
     </div>
   </section>
@@ -192,7 +192,7 @@
     <div class="wrapper section-change-wrapper">color & info&nbsp;&nbsp;&nbsp;&nbsp;color &
       info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info</div>
   </section>
-  <section id="CI" class="topic color-information">
+  <section id="CI" class="topic color-information  animated-button-container">
     <div class="topic-container color-information-container">
       <section class="TT CI-top CI-animated">
         <div class="section-divider"></div>
@@ -223,15 +223,6 @@
               laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
               esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
               qui officia deserunt mollit anim id est laborum.</p>
-            <div class="example-button-wrap">
-              <button id="CI-example" class="TBR-button example-button animated-hover" type="button"
-                onClick=exampleRequest(this)>
-                <span class="example-button-text">interactive example
-                  <span class="example-button-text-hover">interactive example</span>
-                </span>
-                <div class="example-button-hover"></div>
-              </button>
-            </div>
           </section>
         </section>
         <section class="TB-left">
@@ -242,6 +233,15 @@
                 class="TB-quote-cite"><em>Citation</em></cite>
             </blockquote>
           </div>
+          <div class="example-button-wrap animated-button">
+            <button id="CI-example" class="TBR-button example-button" data-container="color-information" type="button"
+              onClick=exampleRequest(this)>
+              <span class="example-button-text">interactive example
+                <span class="example-button-text-hover">interactive example</span>
+              </span>
+              <div class="example-button-hover"></div>
+            </button>
+          </div>
         </section>
       </section>
     </div>
@@ -250,7 +250,7 @@
     <div class="wrapper section-change-wrapper">visual concerns&nbsp;&nbsp;&nbsp;&nbsp;visual
       concerns&nbsp;&nbsp;&nbsp;&nbsp;visual concerns&nbsp;&nbsp;&nbsp;&nbsp;visual concerns</div>
   </div>
-  <section id="DE" class="topic disability-examples">
+  <section id="DE" class="topic disability-examples  animated-button-container">
     <div class="topic-container disability-examples-container">
       <section class="TT DE-top DE-animated">
         <div class="section-divider"></div>
@@ -298,26 +298,26 @@
                 2023). For our website we know that color contrast is an important topic and there are a few resources
                 to use to help us with this: Stark, Adobe Color, and Contrast (Levanier, par. 26, 2021).</p>&nbsp;
               <p>Another colorblind friendly idea for the development on our website will be to use textures in
-                conjunction with color to remove the uncertainty of color concerns.</p>&nbsp;
-            </div>
-            <div class="example-button-wrap ">
-              <button id="DE-example" class="TBR-button example-button animated-hover DE-animated" type="button"
-                onClick=exampleRequest(this)>
-                <span class="example-button-text">interactive example
-                  <span class="example-button-text-hover">interactive example</span>
-                </span>
-                <div class="example-button-hover"></div>
-              </button>
+                conjunction with color to remove the uncertainty of color concerns.</p>
             </div>
           </section>
         </section>
-        <section class="TB-left ">
-          <div class="">
+        <section class="TB-left">
+          <div>
             <blockquote class="TB-quote">
               <span class="quote-marks">"</span>This will be a related quote or comment from a professional source about
               color disabilities<span class="quote-marks">"</span>&nbsp;-&nbsp;<cite
                 class="TB-quote-cite"><em>Citation</em></cite>
             </blockquote>
+          </div>
+          <div class="example-button-wrap animated-button">
+            <button id="DE-example" class="TBR-button example-button DE-animated" data-container = "disability-examples" type="button"
+              onClick=exampleRequest(this)>
+              <span class="example-button-text">interactive example
+                <span class="example-button-text-hover">interactive example</span>
+              </span>
+              <div class="example-button-hover"></div>
+            </button>
           </div>
         </section>
       </section>
