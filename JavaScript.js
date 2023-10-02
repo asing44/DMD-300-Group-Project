@@ -11,6 +11,21 @@ var viewportHeight = window.innerHeight;
 var viewportWidth = window.innerWidth;
 console.log("Viewport height: " + viewportHeight, "Viewport width: " + viewportWidth);
 
+function getScroll() {
+    if (window.scrollY != undefined) {
+        return [scrollX, scrollY];
+    } else {
+        var sx, sy, d = document,
+            r = d.documentElement,
+            b = d.body;
+        sx = r.scrollLeft || b.scrollLeft || 0;
+        sy = r.scrollTop || b.scrollTop || 0;
+        return [sx, sy];
+    }
+}
+
+
+
 window.addEventListener("resize", () => {
     viewportHeight = window.innerHeight;
     viewportWidth = window.innerWidth;
@@ -148,12 +163,11 @@ disabilityExamplesContent.forEach((item, index) => {
 
 // -------------------- BUTTONS -------------------- //
 
-let animatedButton = gsap.utils.toArray(".animated-button");
-let buttonContainer = gsap.utils.toArray(".animated-button-container")
+let animatedButtons = gsap.utils.toArray(".animated-button");
+let pinnedButtons = gsap.utils.toArray(".pin-button");
+let pinSections = gsap.utils.toArray(".pin-container");
 
-animatedButton.forEach((item, index) => {
-
-    console.log(buttonContainer[index], item)
+animatedButtons.forEach((item, index) => {
 
     let elementText = item.children[0].children[0];
     let element = item.children[1]
@@ -177,18 +191,23 @@ animatedButton.forEach((item, index) => {
     item.addEventListener("mouseout", function() {
         hoverTl.reverse();
     });
+});
 
-    let tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: buttonContainer[index],
-            markers: true,
-            pin: item,
-            scrub: true,
-            pinSpacing: false,
-            start: "+=20% top",
-        }
+pinnedButtons.forEach(item => {
+
+    let pinSection = pinSections.filter(section => {
+        return section.dataset.pincontainer == item.dataset.pinbutton
     });
-})
+
+    ScrollTrigger.create({
+        trigger: pinSection,
+        pin: item,
+        start: "+=10% top",
+        end: "bottom bottom",
+        pinReparent: true,
+        markers: true
+    });
+});
 
 // -------------------- SECTION CHANGES -------------------- //
 
