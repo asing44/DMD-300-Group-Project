@@ -383,6 +383,20 @@ function scrollToTop() {
     });
 }
 
+// -------------------- SCROLL TO BOTTOM -------------------- //
+
+var body = document.body,html = document.documentElement;
+
+var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+function scrollToBottom() {
+    gsap.to(window, {
+        duration: 1,
+        scrollTo: height,
+        ease: "power3.out"
+    });
+}
+
 // -------------------- FOOTER -------------------- //
 
 
