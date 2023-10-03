@@ -397,7 +397,7 @@ sup {
     background-color: var(--white);
 }
 
-.hero-h1-wrapper {
+.hero-top-wrapper {
     position: relative;
     backdrop-filter: blur(var(--scale-1));
     -webkit-backdrop-filter: blur(var(--scale-1));
@@ -405,6 +405,27 @@ sup {
     border-radius: 1rem;
     padding: 1.414rem 2.837rem;
     z-index: 1;
+}
+
+.hero-top-group {
+    display: flex;
+    position: absolute;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    padding: var(--scale-4) 0;
+    border-radius: 0 0 var(--scale-1) var(--scale-1);
+    background-color: var(--main);
+    z-index: 5;
+}
+
+.hero-top-group-content {
+    color: var(--white);
+    font-variant: small-caps;
+    font-weight: 500;
+    text-indent: 0;
+    letter-spacing: var(--scale-6);
 }
 
 .hero-h1 {

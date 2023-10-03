@@ -32,7 +32,33 @@ window.addEventListener("resize", () => {
 
 // -------------------- HERO -------------------- //
 
+const groupBanner = document.getElementsByClassName("hero-top-group")[0];
 const heroArrow = document.getElementsByClassName("hero-arrow")[0];
+
+gsap.set(".hero-top-group", {
+    yPercent: -100
+});
+
+gsap.to(".hero-top-group", {
+    delay: 2,
+    yPercent: 0,
+    ease: "slow.out",
+    onComplete: () => {
+        let groupBannerTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hero-top-group",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1.5,
+            }
+        });
+        
+        groupBannerTl.to(".hero-top-group", {
+            yPercent: -100,
+            ease: "slow.out"
+        })
+    }
+});
 
 gsap.to(heroArrow, {
     keyframes: [{
