@@ -599,7 +599,7 @@ sup {
 .example-button {
     position: relative;
     height: 100%;
-    width: 100%;
+    width: 20rem;
     bottom: 0;
     left: 0;
     padding: var(--scale-1) var(--scale1);
