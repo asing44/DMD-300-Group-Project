@@ -296,8 +296,24 @@ sup {
 }
 
 .underlined:hover, .underlined:focus {
-    color: var(--main) !important;
+    color: var(--main);
     text-decoration-thickness: var(--scale-4);
+    text-decoration-skip-ink: none;
+}
+
+.underlined-sm {
+    color: var(--dark);
+    text-decoration: underline solid var(--redAccent-1);
+    text-decoration-thickness: 0.15rem;
+    text-underline-offset: 0.1rem;
+    text-decoration-skip-ink: none;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.underlined-sm:hover, .underlined-sm:focus {
+    color: var(--main);
+    text-decoration-thickness: var(--scale-5);
     text-decoration-skip-ink: none;
 }
 
@@ -306,9 +322,14 @@ sup {
     text-decoration-line: none;
 }
 
-.inline-citation {
-    text-decoration: underline solid var(--redAccent-1) var(--scale-5);
-    text-decoration-skip-ink: none;
+.inline-reference {
+    color: var(--dark-1);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.inline-reference:hover, .inline-reference:focus {
+    color: var(--dark);
 }
 
 .quote-marks {
@@ -320,6 +341,17 @@ sup {
     align-items: center;
     color: var(--redAccent-1);
     font-size: var(--scale0);
+}
+
+.quote-marks-sm {
+    position: relative;
+    display: inline-flex;
+    height: 1em;
+    width: min-content;
+    justify-content: center;
+    align-items: center;
+    color: var(--redAccent-1);
+    font-size: var(--scale-1);
 }
 
 .animated-link {
@@ -506,7 +538,6 @@ sup {
     border: var(--scale-6) solid var(--white-1);
     border-radius: 1rem;
     font-size: var(--scale0);
-    font-weight: 500;
     backdrop-filter: blur(var(--scale-1));
     -webkit-backdrop-filter: blur(var(--scale-1));
 }
