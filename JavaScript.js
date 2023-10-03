@@ -284,7 +284,6 @@ function exampleClose() {
 
 const interactiveButtonWrap = document.getElementById("interactive-content-button-wrap");
 const interactiveButton = document.getElementsByClassName("example-button")[0];
-console.log("🚀 ~ file: JavaScript.js:287 ~ interactiveButton:", interactiveButton)
 
 // Color contrast example
 
