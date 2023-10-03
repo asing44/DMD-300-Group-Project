@@ -241,11 +241,11 @@ let interactiveExample = gsap.timeline({
 
 function hideButton() {
     let tl = gsap.timeline();
-    tl.to("#interactive-content-button", {
+    tl.to("#interactive-content-button-wrap", {
         duration: 0.5,
         opacity: 0,
         ease: "ease.inOut"
-    }).set("#interactive-content-button", {
+    }).set("#interactive-content-button-wrap", {
         display: "none"
     });
     return tl;
@@ -282,7 +282,9 @@ function exampleClose() {
 
 // -------------------- INTERACTIVE EXAMPLES BUTTONS -------------------- //
 
-const interactiveButton = document.getElementById("interactive-content-button");
+const interactiveButtonWrap = document.getElementById("interactive-content-button-wrap");
+const interactiveButton = document.getElementsByClassName("example-button")[0];
+console.log("🚀 ~ file: JavaScript.js:287 ~ interactiveButton:", interactiveButton)
 
 // Color contrast example
 
@@ -296,22 +298,75 @@ let ccInteractive = gsap.timeline({
         start: "top top",
         end: "bottom center",
         toggleActions: "play reverse play reverse",
-        markers: true
+        onEnterBack: function() {
+            interactiveButton.id = "CC-example";
+        },
+        onLeave: function() {
+            interactiveButton.id = "CI-example";
+        }
     }
 });
 
-ccInteractive.fromTo(interactiveButton, {
+ccInteractive.fromTo(interactiveButtonWrap, {
     opacity: 0
 }, {
     opacity: 1
-})
+});
+
+// Color information example
+
+let ciInteractive = gsap.timeline({
+    defaults: {
+        duration: 0.5,
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: "#CI",
+        start: "top top",
+        end: "bottom center",
+        toggleActions: "play reverse play reverse",
+        onEnterBack: function() {
+            interactiveButton.id = "CI-example";
+        },
+        onLeave: function() {
+            interactiveButton.id = "DE-example";
+        }
+    }
+});
+
+ciInteractive.fromTo(interactiveButtonWrap, {
+    opacity: 0
+}, {
+    opacity: 1
+});
+
+// Color disability example
+
+let cdInteractive = gsap.timeline({
+    defaults: {
+        duration: 0.5,
+        ease: "ease.inOut"
+    },
+    scrollTrigger: {
+        trigger: "#DE",
+        start: "top top",
+        end: "+=85% center",
+        toggleActions: "play reverse play reverse",
+    }
+});
+
+cdInteractive.fromTo(interactiveButtonWrap, {
+    opacity: 0
+}, {
+    opacity: 1
+});
 
 
 // -------------------- BACK TO TOP -------------------- //
 
-const backToTop = document.getElementsByClassName("back-to-top-wrapper")[0];
+const backToTopButton = document.getElementsByClassName("back-to-top-wrapper")[0];
 
-gsap.to(backToTop, {
+gsap.to(backToTopButton, {
     duration: 0.5,
     opacity: "100%",
     scrollTrigger: {
@@ -321,13 +376,13 @@ gsap.to(backToTop, {
     }
 });
 
-backToTop.addEventListener("click", () => {
+function scrollToTop() {
     gsap.to(window, {
         duration: 1,
         scrollTo: 0,
         ease: "power3.out",
     });
-});
+}
 
 // -------------------- FOOTER -------------------- //
 

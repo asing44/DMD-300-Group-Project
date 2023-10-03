@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- TODO -->
 <!-- 
- - Accessibility button
+  - Accessibility button
     - Low-contrast mode
     - Theme mode
-    - Floating interactive button at bottom of each section
+    - Create sitemap
  -->
 <html>
 
@@ -46,7 +46,7 @@
     <div id="grainy-gradient"></div>
   </div>
   <div class="back-to-top-wrapper">
-    <button type="button" class="back-to-top" role="Go back to the top of the page."><i
+    <button type="button" class="back-to-top" onclick="scrollToTop()" role="Go back to the top of the page."><i
         class="fa-solid fa-angle-up"></i></button>
   </div>
   <div class="interactive-content-container " data-container="interactive-content-container">
@@ -93,8 +93,8 @@
     </div>
   </div>
   <div class="example-button-container">
-    <div id="interactive-content-button" class="example-button-wrap">
-      <button id="CC-example" class="TBR-button example-button animated-button pin-button" type="button"
+    <div id="interactive-content-button-wrap" class="example-button-wrap">
+      <button id="CC-example" class="example-button animated-button" type="button"
         onClick=exampleRequest(this)>
         <span class="example-button-text">interactive example
           <span class="example-button-text-hover">interactive example</span>
@@ -226,10 +226,10 @@
     COLOR INFORMATION SECTION
     --------------------
     -->
-  <section class="section-change color-information-change">
+  <div class="section-change color-information-change">
     <div class="wrapper section-change-wrapper">color & info&nbsp;&nbsp;&nbsp;&nbsp;color &
       info&nbsp;&nbsp;&nbsp;&nbsp;color & info&nbsp;&nbsp;&nbsp;&nbsp;color & info</div>
-  </section>
+  </div>
   <section id="CI" class="topic color-information  animated-button-container pin-container">
     <div class="topic-container color-information-container">
       <section class="TT CI-top CI-animated">
@@ -348,10 +348,44 @@
     FOOTER
     --------------------
     -->
-
+  <div class="section-divider footer-section-divider"></div>
   <footer>
-    <div class="section-divider"></div>
-
+    <div class="footer-main">
+      <div class="footer-right">
+        <section class="footer-site-links">
+          <h4 class="footer-site-links-heading footer-heading">Site resources</h4>
+          <ul class="footer-site-links-list">
+            <li class="footer-site-link underlined">Sitemap</li>
+            <li class="footer-site-link underlined"><a onclick="scrollToTop()">Back to top</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer-divider-wrap fd-1">
+        <div class="footer-divider"></div>
+      </div>
+      <div class="footer-center">
+        <section class="footer-additional-links">
+          <h4 class="footer-additional-links-heading footer-heading">Additional resources</h4>
+          <ul class="footer-additional-links-list">
+            <li class="footer-additional-link">
+              <a class="underlined" href="https://validator.w3.org/" target="_blank">W3C Markup Validation</a>
+            </li>
+            <li class="footer-additional-link">
+              <a class="underlined" href="https://wave.webaim.org/" target="_blank">WAVE<sup class="no-underline">®</sup> web accessibility evaluation tool</a>
+            </li>
+            <li class="footer-additional-link">
+              <a class="underlined" href="https://validator.w3.org/" target="_blank">W3C Markup Validation</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer-divider-wrap fd-2">
+        <div class="footer-divider"></div>
+      </div>
+      <div class="footer-left">
+        <p class="footer-summary">This site was constructed and reviewed acording to the W3 accessibility guidlines and the [insert source] online accessibility guidebook.</p>
+      </div>
+    </div>
   </footer>
 </body>
 <!-- Include JavaScript -->
