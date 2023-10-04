@@ -20,6 +20,7 @@
     --greenAccent: rgba(32, 252, 143, 1);
     --redAccent-1: rgba(219, 80, 74, 0.5);
     --redAccent: rgba(219, 80, 74, 1);
+    --darkShadow: rgba(49, 54, 40, 0.1);
     --dark-2: rgba(49, 54, 40, 0.25);
     --dark-1: rgba(49, 54, 40, 0.50);
     --dark: rgba(49, 54, 40, 1); /* #130209 */
@@ -410,18 +411,16 @@ sup {
 .hero-top-group {
     display: flex;
     position: absolute;
-    width: 85%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     top: 0;
     padding: var(--scale-4) 0;
-    border-radius: 0 0 var(--scale-1) var(--scale-1);
-    background-color: var(--main);
     z-index: 5;
 }
 
 .hero-top-group-content {
-    color: var(--white);
+    color: var(--mainLight);
     font-variant: small-caps;
     font-weight: 500;
     text-indent: 0;
