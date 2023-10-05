@@ -788,21 +788,31 @@ sup {
     background-color: var(--dark-1);
 }
 
-.TB-quote-wrap {
+.TB-aside {
+    position: relative;
+    display: flex;
     height: min-content;
     width: 25%;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--scale0) 0;
     margin: 0 var(--scale1) var(--scale1) 0;
     float: left;
+}
+
+.TB-quote-wrap, .TB-resources {
+    height: min-content;
+    width: 100%;
     font-size: var(--scale-2);
 }
 
-.TB-quote-heading {
+.TB-quote-heading, .TB-resources-heading {
     position: relative;
     margin-top: 0;
     color: var(--mainLight-1);
 }
 
-.TB-quote-heading::after {
+.TB-quote-heading::after, .TB-resources-heading::after {
     content: "";
     position: absolute;
     height: var(--scale-5);
@@ -812,7 +822,7 @@ sup {
     background-color: var(--mainLight-1);
 }
 
-.TB-quote {
+.TB-quote, .TB-resources {
     padding: var(--scale-1) var(--scale0);
     border: var(--scale-7) solid var(--white-2);
     background: rgb(242,244,247);
@@ -822,6 +832,14 @@ sup {
     font-size: var(--scale-2);
     backdrop-filter: blur(var(--scale-1));
     -webkit-backdrop-filter: blur(var(--scale-1));
+}
+
+.TB-resources-list li {
+    margin-bottom: var(--scale0);
+}
+
+.TB-resources-list li a {
+    font-weight: 500;
 }
 
 /* --------------------
