@@ -532,6 +532,7 @@ sup {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    font-size: var(--scale0);
     font-weight: 500;
     backdrop-filter: blur(var(--scale-1));
     -webkit-backdrop-filter: blur(var(--scale-1));
